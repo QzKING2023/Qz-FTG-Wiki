@@ -1,0 +1,13 @@
+# OS files
+Thumbs.db
+.DS_Store
+
+# Editor config
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+
+# Claude local config
+.claude/

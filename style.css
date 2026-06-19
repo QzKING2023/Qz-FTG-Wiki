@@ -1,0 +1,292 @@
+/* ============================================
+   Page-wide Styles
+   Dark background, white text, monospaced font
+   (Chinese + English)
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  /* Consolas for English, FangSong (仿宋) for Chinese */
+  font-family:
+    'Consolas',
+    'FangSong', '仿宋',
+    monospace;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+/* ============================================
+   Warning Box
+   Red border + background, ! icon, bold title
+   ============================================ */
+
+.warning-box {
+  background-color: #2d1a1a;            /* dark red tint */
+  border: 2px solid #e74c3c;            /* strong red border */
+  border-left: 6px solid #e74c3c;       /* thicker left accent */
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  max-width: 700px;
+  width: 100%;
+  color: #fdd;                          /* slightly pinkish white */
+}
+
+.warning-box .warning-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem 0;
+  color: #e74c3c;                       /* red title text */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Red exclamation-mark icon via Unicode */
+.warning-box .warning-title::before {
+  content: '\26A0\FE0F';                /* ⚠️ warning sign */
+  font-size: 1.3rem;
+  color: #e74c3c;
+}
+
+.warning-box p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ============================================
+   Hint / Tip Box
+   Yellow border + background, lightbulb icon, bold title
+   ============================================ */
+
+.hint-box {
+  background-color: #2d2a1a;            /* dark yellow tint */
+  border: 2px solid #f1c40f;            /* yellow border */
+  border-left: 6px solid #f1c40f;       /* thicker left accent */
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  max-width: 700px;
+  width: 100%;
+  color: #ffe;                          /* warm white */
+}
+
+.hint-box .hint-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem 0;
+  color: #f1c40f;                       /* yellow title text */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Lightbulb icon via Unicode */
+.hint-box .hint-title::before {
+  content: '\1F4A1';                    /* 💡 light bulb */
+  font-size: 1.3rem;
+  color: #f1c40f;
+}
+
+.hint-box p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ============================================
+   QzKING's Understanding Box
+   Yellow border + background, SilverWolf icon, bold title
+   ============================================ */
+
+.qzking-box {
+  background-color: #2d2a1a;            /* dark yellow tint */
+  border: 2px solid #f1c40f;            /* yellow border */
+  border-left: 6px solid #f1c40f;       /* thicker left accent */
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  max-width: 700px;
+  width: 100%;
+  color: #ffe;                          /* warm white */
+}
+
+.qzking-box .qzking-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem 0;
+  color: #f1c40f;                       /* yellow title text */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qzking-box .qzking-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #f1c40f;
+  flex-shrink: 0;
+}
+
+.qzking-box p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ============================================
+   Title Bar
+   Image icon on the left, title beside it
+   ============================================ */
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 1rem 0;
+  border-bottom: 1px solid #333;
+  margin-bottom: 1rem;
+}
+
+.title-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #555;
+  flex-shrink: 0;
+}
+
+.title-bar h1 {
+  font-size: 2rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ============================================
+   Sidebar
+   Vertical nav panel on the left, collapsible
+   ============================================ */
+
+.sidebar {
+  position: relative;
+  z-index: 10;
+  background-color: #1a1a1a;
+  border-right: 1px solid #333;
+  width: 240px;
+  min-width: 240px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.25s ease, min-width 0.25s ease;
+  flex-shrink: 0;
+}
+
+.sidebar.collapsed {
+  width: 48px;
+  min-width: 48px;
+  overflow: hidden;
+}
+
+/* Toggle button */
+.sidebar-toggle {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #ccc;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem 0.4rem;
+  line-height: 1;
+  transition: color 0.15s, background-color 0.15s;
+  z-index: 10;
+}
+
+.sidebar-toggle:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+/* ============================================
+   Navigation Bar
+   Vertical nav — sidebar variant
+   ============================================ */
+
+.navbar {
+  padding-top: 3rem;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-label {
+  display: block;
+  padding: 0.6rem 1rem;
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.15s, background-color 0.15s;
+  line-height: 1.4;
+}
+
+.nav-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.nav-item:hover > .nav-label {
+  color: #fff;
+  background-color: #252525;
+}
+
+/* ============================================
+   Main Wrapper
+   Holds title bar + content area
+   ============================================ */
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-width: 0;
+}
+
+/* ============================================
+   Content Area
+   Empty region for user-editable content
+   ============================================ */
+
+.content-area {
+  width: 100%;
+  max-width: 900px;
+  padding: 1rem;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  color: #999;
+}
