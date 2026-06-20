@@ -465,11 +465,64 @@ body {
   gap: 0.2rem;
 }
 
+.reversal-label {
+  font-weight: bold;
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .reversal-header {
   font-size: 0.7rem;
   font-weight: bold;
+  font-style: italic;
   color: #5dade2;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.05rem;
+}
+
+/* ============================================
+   Attack Type & Invulnerability Colors
+   ============================================ */
+
+.LightAttack {
+  color: #00FFFF;
+}
+
+.MediumAttack {
+  color: #FFFF00;
+}
+
+.HeavyAttack {
+  color: #FF0000;
+}
+
+.Overdrive {
+  color: #CC00FF;
+}
+
+.SuperArt {
+  color : #FFFFFF;
+}
+
+.FullInv {
+  color: #00FF00;
+}
+
+.Hit-ProjectileInv {
+  color: #D03C01;
+}
+
+.Hit-ThrowInv {
+  color: #9B59B6;
+}
+
+.ThrowInv {
+  color: #3498DB;
+}
+
+.ProjectileInv {
+  color: #E1712B;
 }
