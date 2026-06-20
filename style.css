@@ -358,11 +358,12 @@ body {
 
 /* ============================================
    Summary Row
-   Two-column layout: Silver Wolf (left), Rating (right)
+   Vertical layout: Silver Wolf (top), Rating (bottom)
    ============================================ */
 
 .summary-row {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   max-width: 900px;
   width: 100%;
@@ -371,8 +372,6 @@ body {
 }
 
 .summary-row .silver-wolf-box {
-  flex: 1;
-  min-width: 0;
   margin: 0;
   max-width: none;
 }
@@ -383,8 +382,6 @@ body {
    ============================================ */
 
 .rating-box {
-  flex: 1;
-  min-width: 0;
   background-color: #2d261a;            /* dark gold tint */
   border: 2px solid #d4a017;            /* gold border */
   border-left: 6px solid #d4a017;       /* thicker left accent */
@@ -441,11 +438,11 @@ body {
 .rating-bar-fill {
   height: 100%;
   border-radius: 5px;
-  background: linear-gradient(90deg, #d4a017, #f1c40f);
+  background: #d4a017;
 }
 
 .rating-score {
-  flex: 0 0 32px;
+  flex: 0 0 44px;
   font-size: 0.8rem;
   font-weight: bold;
   color: #f1c40f;
