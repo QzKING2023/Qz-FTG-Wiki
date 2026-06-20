@@ -450,6 +450,34 @@ body {
   white-space: nowrap;
 }
 
+.rating-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.rating-section-title {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #d4a017;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #d4a01733;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.15rem;
+}
+
+.rating-note {
+  font-size: 0.8rem;
+  color: #999;
+  background-color: #1a1a1a;
+  border: 1px dashed #444;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  min-height: 2.5rem;
+  margin-top: 0.25rem;
+}
+
 @media (max-width: 480px) {
   .summary-row {
     flex-direction: column;
@@ -624,4 +652,120 @@ body {
 
 .ProjectileInv {
   color: #E1712B;
+}
+
+/* ============================================
+   Players to Watch Box
+   Teal border + background, gamepad icon, bold title
+   ============================================ */
+
+.players-watch-box {
+  background-color: #1a1a1a;            /* dark, matching page theme */
+  border: 1px solid #333;               /* subtle dark border */
+  border-left: 4px solid #1abc9c;       /* teal left accent */
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem auto;
+  max-width: 900px;
+  width: 100%;
+  color: #eff;                          /* cool white */
+}
+
+.players-watch-box .players-watch-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 0 0.6rem 0;
+  color: #ccc;                          /* muted, matches dark theme */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Gamepad icon via Unicode */
+.players-watch-box .players-watch-title::before {
+  content: '\1F3AE';                    /* 🎮 video game */
+  font-size: 1.3rem;
+  color: #1abc9c;
+}
+
+.players-watch-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #333;        /* thicker dark separator */
+}
+
+.players-watch-row:last-child {
+  border-bottom: none;
+}
+
+.players-watch-name {
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.players-watch-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  border-left: 1px solid #333;
+  padding-left: 1.5rem;
+}
+
+.players-watch-cfn {
+  color: #5dade2;                       /* muted cyan, consistent with reversal color */
+  font-size: 0.85rem;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/* Social links — inline hyperlinked text */
+.players-watch-social {
+  color: #5dade2;
+  text-decoration: none;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  font-weight: bold;
+  transition: color 0.15s;
+}
+
+.players-watch-social:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.players-watch-detail {
+  color: #888;
+  font-weight: bold;
+  font-size: 0.85rem;
+  flex: 1;
+  text-align: center;
+  border-left: 1px solid #333;
+  padding-left: 1.5rem;
+  white-space: normal;
+  word-break: break-word;
+}
+
+@media (max-width: 480px) {
+  .players-watch-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .players-watch-info {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .players-watch-detail {
+    text-align: left;
+    border-left: none;
+    padding-left: 0;
+  }
 }
