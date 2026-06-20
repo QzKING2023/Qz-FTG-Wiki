@@ -357,6 +357,109 @@ body {
 }
 
 /* ============================================
+   Summary Row
+   Two-column layout: Silver Wolf (left), Rating (right)
+   ============================================ */
+
+.summary-row {
+  display: flex;
+  gap: 1rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 1rem 0;
+  align-items: stretch;
+}
+
+.summary-row .silver-wolf-box {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  max-width: none;
+}
+
+/* ============================================
+   Character Rating Box
+   Gold/amber border + background, star icon, bold title
+   ============================================ */
+
+.rating-box {
+  flex: 1;
+  min-width: 0;
+  background-color: #2d261a;            /* dark gold tint */
+  border: 2px solid #d4a017;            /* gold border */
+  border-left: 6px solid #d4a017;       /* thicker left accent */
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  color: #ffe;                          /* warm white */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rating-box .rating-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 0 0.1rem 0;
+  color: #d4a017;                       /* gold title text */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rating-box .rating-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #d4a017;
+  flex-shrink: 0;
+}
+
+.rating-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rating-label {
+  flex: 0 0 80px;
+  font-size: 0.85rem;
+  color: #ccc;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.rating-bar-bg {
+  flex: 1;
+  height: 10px;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #333;
+}
+
+.rating-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #d4a017, #f1c40f);
+}
+
+.rating-score {
+  flex: 0 0 32px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #f1c40f;
+  text-align: left;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .summary-row {
+    flex-direction: column;
+  }
+}
+
+/* ============================================
    Content Area
    Empty region for user-editable content
    ============================================ */
