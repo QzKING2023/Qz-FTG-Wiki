@@ -209,6 +209,52 @@ body {
 }
 
 /* ============================================
+   Page Navigation Bar
+   Tab-style buttons for navigating between sub-pages
+   ============================================ */
+
+.page-nav-bar {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 1rem;
+}
+
+.page-nav-btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  color: #aaa;
+  text-decoration: none;
+  border: 1px solid #333;
+  border-bottom: 2px solid #333;
+  background-color: #1a1a1a;
+  font-size: 0.95rem;
+  transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+}
+
+.page-nav-btn:first-child {
+  border-radius: 6px 0 0 0;
+}
+
+.page-nav-btn:last-child {
+  border-radius: 0 6px 0 0;
+}
+
+.page-nav-btn:hover {
+  color: #fff;
+  background-color: #2a2a2a;
+  border-color: #555;
+}
+
+.page-nav-btn.active {
+  color: #fff;
+  background-color: #4f48b9;
+  border-color: #4f48b9;
+  border-bottom-color: #4f48b9;
+}
+
+/* ============================================
    Back Button
    Used on sub-pages to return to index
    ============================================ */
