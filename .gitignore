@@ -11,3 +11,21 @@ node_modules/
 
 # Claude local config
 .claude/
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Editor temp files
+*.swp
+*.swo
+*~
+
+# Build output
+dist/
+build/
+out/
