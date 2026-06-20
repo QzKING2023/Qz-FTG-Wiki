@@ -369,8 +369,14 @@ body {
   border-radius: 6px;
   color: #999;
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   gap: 2rem;
+}
+
+/* Switch to row when sub-page two-column layout is used */
+.content-area:has(.content-text) {
+  flex-direction: row;
 }
 
 .content-text {
@@ -412,19 +418,6 @@ body {
   border-top: 1px solid #333;
 }
 
-.stats-cols {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.stats-col {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
 .stat-row {
   display: flex;
   justify-content: space-between;
@@ -453,6 +446,7 @@ body {
 .stat-invul {
   color: #5dade2;
   font-size: 0.7rem;
+  font-weight: bold;
   white-space: nowrap;
   flex-shrink: 0;
 }
