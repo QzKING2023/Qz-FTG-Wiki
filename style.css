@@ -1,4 +1,118 @@
 /* ============================================
+   Reusable Section Titles
+   Primary: bold, left-aligned, large font
+   Secondary: bold, left-aligned, smaller font
+   ============================================ */
+
+.section-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: left;
+  color: #f0f0f0;
+  margin: 1.5rem 0 0.6rem 0;
+  padding: 0;
+  border: none;
+}
+
+.section-subtitle {
+  font-weight: bold;
+  font-size: 1.15rem;
+  text-align: left;
+  color: #ddd;
+  margin: 1rem 0 0.5rem 0;
+  padding: 0;
+  border: none;
+}
+
+/* ============================================
+   Combo Bar
+   Two-column layout:
+     Left: upper (combo notation, bold+italic) +
+           lower (details / notes)
+     Right: reserved for videos / GIFs
+   ============================================ */
+
+.combo-bar {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0.75rem 0;
+  min-height: 100px;
+}
+
+.combo-bar-left {
+  flex: 1 1 66.666%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.combo-bar-notation {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1rem;
+  color: #f0c040;
+  background-color: #1a1a1a;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid #333;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.combo-bar-notes {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #ccc;
+  background-color: #1a1a1a;
+  padding: 0.6rem 0.9rem;
+  line-height: 1.5;
+}
+
+.combo-bar-right {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  min-height: 100px;
+  border: 1px dashed #444;
+  border-radius: 6px;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.combo-bar-right::before {
+  content: '📷 视频 / 动图';
+  white-space: nowrap;
+}
+
+.combo-bar-right:has(img, video, iframe)::before {
+  content: none;
+}
+
+/* Stack vertically on narrow screens */
+@media (max-width: 600px) {
+  .combo-bar {
+    flex-direction: column;
+  }
+
+  .combo-bar-left {
+    flex: auto;
+  }
+
+  .combo-bar-right {
+    flex: auto;
+    max-width: none;
+    min-height: 80px;
+  }
+}
+
+/* ============================================
    Page-wide Styles
    Dark background, white text, monospaced font
    (Chinese + English)
