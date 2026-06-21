@@ -66,7 +66,53 @@
     }
   }
 
+  var DIFFICULTY_COLORS = {
+    'Very Easy': '#F863F5',
+    'Easy': '#27A3F5',
+    'Medium': '#079C07',
+    'Hard': '#F4930B',
+    'Very Hard': '#F52727'
+  };
+  var DIFFICULTY_FALLBACK_COLOR = '#888888';
+
+  function injectDifficultyLabels() {
+    var bars = document.querySelectorAll('.combo-bar[data-difficulty]');
+    for (var i = 0; i < bars.length; i++) {
+      var bar = bars[i];
+      var raw = bar.getAttribute('data-difficulty').trim();
+      if (!raw) continue;
+
+      var label = document.createElement('span');
+      label.className = 'combo-diff-label';
+
+      if (raw.indexOf('-') !== -1) {
+        // Range: split and color each segment
+        var parts = raw.split('-');
+        for (var j = 0; j < parts.length; j++) {
+          if (j > 0) {
+            var sep = document.createElement('span');
+            sep.style.color = DIFFICULTY_FALLBACK_COLOR;
+            sep.textContent = ' - ';
+            label.appendChild(sep);
+          }
+          var segment = parts[j].trim();
+          var segSpan = document.createElement('span');
+          segSpan.style.color = DIFFICULTY_COLORS[segment] || DIFFICULTY_FALLBACK_COLOR;
+          segSpan.textContent = segment;
+          label.appendChild(segSpan);
+        }
+      } else {
+        // Single value: one color
+        label.style.color = DIFFICULTY_COLORS[raw] || DIFFICULTY_FALLBACK_COLOR;
+        label.textContent = raw;
+      }
+
+      bar.insertBefore(label, bar.firstChild);
+    }
+  }
+
   function runAll() {
+    injectDifficultyLabels();
     autoFillRatingBars();
     applyRatingColors();
     setupPageNav();
