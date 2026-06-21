@@ -663,7 +663,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 2rem;
+  gap: 0.75rem;
+}
+
+.content-area img {
+  max-width: 50%;
+  height: auto;
 }
 
 /* Switch to row when sub-page two-column layout is used */
@@ -819,31 +824,78 @@ body {
 }
 
 /* ============================================
+   Legend Table (用于"在开始之前"标识说明)
+   Two-column: 标识 | 说明
+   ============================================ */
+
+.legend-table {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: collapse;
+  margin: 0;
+  border: 1px solid #555;                /* 表格外边框 */
+}
+
+.legend-table td {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #444;                /* 所有单元格网格线 */
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.legend-table tr:first-child td {
+  font-weight: bold;
+  color: #e0e0e0;
+  background-color: #1e1e1e;             /* 表头行区分背景 */
+  border-bottom: 2px solid #666;         /* 表头行下方更粗的分割线 */
+}
+
+.legend-table td:first-child {
+  font-weight: bold;
+  white-space: nowrap;
+  width: 120px;
+  color: #f0c040;                        /* 金色标识列，和 combo-bar-notation 统一 */
+}
+
+.legend-table tr:first-child td:first-child {
+  color: #e0e0e0;                        /* 表头行第一列不用金色 */
+}
+
+.legend-table tr:last-child td {
+  border-bottom-width: 1px;              /* 最后一行保持与其余行一致的底部边框 */
+}
+
+/* ============================================
    Players to Watch Box
-   Teal border + background, gamepad icon, bold title
+   Table / spreadsheet layout with consistent
+   column widths and visible cell borders
    ============================================ */
 
 .players-watch-box {
-  background-color: #1a1a1a;            /* dark, matching page theme */
-  border: 1px solid #333;               /* subtle dark border */
+  background-color: #1a1a1a;
+  border: 1px solid #4a4a4a;            /* visible outer gridline */
   border-left: 4px solid #1abc9c;       /* teal left accent */
-  border-radius: 6px;
-  padding: 1rem 1.25rem;
+  border-radius: 0;                     /* sharp corners for spreadsheet look */
+  padding: 0;                           /* cells own their padding */
   margin: 1rem auto;
   max-width: 900px;
   width: 100%;
-  color: #eff;                          /* cool white */
+  color: #eff;
+  overflow: hidden;
 }
 
 .players-watch-box .players-watch-title {
   font-weight: bold;
   font-size: 1.1rem;
-  margin: 0 0 0.6rem 0;
-  color: #ccc;                          /* muted, matches dark theme */
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  color: #e0e0e0;                       /* slightly brighter for header */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  border-bottom: 2px solid #555;        /* thicker header separator */
+  background-color: #1e1e1e;            /* distinguish header row */
 }
 
 /* Gamepad icon via Unicode */
