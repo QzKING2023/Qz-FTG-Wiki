@@ -671,8 +671,7 @@ body {
 }
 
 .content-area img {
-  max-width: 50%;
-  height: auto;
+  max-width: 100%;
 }
 
 /* Switch to row when sub-page two-column layout is used */
