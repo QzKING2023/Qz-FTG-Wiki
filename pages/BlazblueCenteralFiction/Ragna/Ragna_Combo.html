@@ -1,579 +1,1149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BBCF/Ragna/Combo</title>
-  <link rel="stylesheet" href="../../../style.css">
-</head>
-<body>
-  <div class="main-wrapper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BBCF/Ragna/Combo</title>
+    <link rel="stylesheet" href="../../../style.css" />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <header class="title-bar">
+        <img
+          src="../../../images/BlazblueCenteralFiction/Ragna/BBCF_Ragna_the_Bloodedge_Icon.png"
+          alt="RG_Icon"
+          class="title-icon"
+        />
+        <h1>拉格纳 连段指南</h1>
+        <a href="../BBCF_Main.html" class="back-btn">← BBCF</a>
+      </header>
 
-    <header class="title-bar">
-      <img src="../../../images/BlazblueCenteralFiction/Ragna/BBCF_Ragna_the_Bloodedge_Icon.png" alt="RG_Icon" class="title-icon">
-      <h1>拉格纳 连段指南</h1>
-      <a href="../BBCF_Main.html" class="back-btn">← BBCF</a>
-    </header>
+      <nav class="page-nav-bar">
+        <a class="page-nav-btn">Overview</a>
+        <a class="page-nav-btn active">Combo</a>
+      </nav>
 
-    <nav class="page-nav-bar">
-      <a class="page-nav-btn">Overview</a>
-      <a class="page-nav-btn active">Combo</a>
-    </nav>
+      <h2 class="section-title">在开始之前</h2>
+      <main class="content-area">
+        本节展示在连段指南中，你可能会遇到的各种标识以及其代表的意义。
+        <h3 class="section-subtitle">数字小键盘记法</h3>
+        数字小键盘记法为格斗游戏的操作输入提供了一套标准化体系。它将方向键输入映射到计算器或计算机的数字小键盘上，且始终假设玩家角色面向右侧。
+        <img src="../../../images/Numpad-Notion.png" class="content-img" />
 
-    <h2 class="section-title">在开始之前</h2>
-    <main class="content-area">
-      本节展示在连段指南中，你可能会遇到的各种标识以及其代表的意义。
-      <h3 class="section-subtitle">数字小键盘记法</h3>
-      数字小键盘记法为格斗游戏的操作输入提供了一套标准化体系。它将方向键输入映射到计算器或计算机的数字小键盘上，且始终假设玩家角色面向右侧。
-      <img src="../../../images/Numpad-Notion.png" class="content-img">
-
-      <h3 class="section-subtitle">其余标识</h3>
-      <table class="legend-table">
-        <tr>
-          <td>标识</td>
-          <td>意义</td>
-        </tr>
-        <tr>
-          <td>></td>
-          <td>
-            <b>取消</b>前一个动作进入下一个动作<br>
-            例如BB的链式取消(<span class="AAttack">5A</span> > <span class="BAttack">5B</span> > <span class="CAttack">5C</span>)
-          </td>
-        </tr>
-        <tr>
-          <td>~</td>
-          <td>
-            <b>取消</b>前一个动作进入其<b>追加派生</b><br>
-            例如拉格纳的<span class="AAttack">214A</span>(<span class="AAttack">214A</span>~<span class="DAttack">214D</span>)
-          </td>
-        </tr>
-        <tr>
-          <td>,</td>
-          <td>
-            <b>连接</b>前一个动作进入下一个动作。这<b>不是取消</b>，而是帧数能够接上。<br>
-            例如拉格纳的<span class="DAttack">236D</span>~dc, <span class="BAttack">5B</span>/<span class="CAttack">5C</span>。
-          </td>
-        </tr>
-        <tr>
-          <td>jc/hjc</td>
-          <td>
-            <b>跳跃取消/高跳取消</b>；对于直(高)跳取消，使用8(h)jc。<br>
-            例如拉格纳的 (Aerial hit)<span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-          </td>
-        </tr>
-        <tr>
-          <td>jX</td>
-          <td>
-            <b>跳跃动作</b>；对于直跳动作，使用8jX。<br>
-            例如琴恩的<span class="CAttack">jC</span>或是哈扎马的<span class="DAttack">j8D</span>
-          </td>
-        </tr>
-        <tr>
-          <td>[X]</td>
-          <td>
-            <b>按住按键输入</b>。<br>
-            例如神乐的<span class="BAttack">[2]8B</span>，麻衣的<span class="BAttack">5X[B]</span><span class="AAttack">6A</span>
-          </td>
-        </tr>
-        <tr>
+        <h3 class="section-subtitle">其余标识</h3>
+        <table class="legend-table">
+          <tr>
+            <td>标识</td>
+            <td>意义</td>
+          </tr>
+          <tr>
+            <td>></td>
+            <td>
+              <b>取消</b>前一个动作进入下一个动作<br />
+              例如BB的链式取消(<span class="AAttack">5A</span> >
+              <span class="BAttack">5B</span> > <span class="CAttack">5C</span>)
+            </td>
+          </tr>
+          <tr>
+            <td>~</td>
+            <td>
+              <b>取消</b>前一个动作进入其<b>追加派生</b><br />
+              例如拉格纳的<span class="AAttack">214A</span>(<span
+                class="AAttack"
+                >214A</span
+              >~<span class="DAttack">214D</span>)
+            </td>
+          </tr>
+          <tr>
+            <td>,</td>
+            <td>
+              <b>连接</b
+              >前一个动作进入下一个动作。这<b>不是取消</b>，而是帧数能够接上。<br />
+              例如拉格纳的<span class="DAttack">236D</span>~dc,
+              <span class="BAttack">5B</span>/<span class="CAttack">5C</span>。
+            </td>
+          </tr>
+          <tr>
+            <td>jc/hjc</td>
+            <td>
+              <b>跳跃取消/高跳取消</b>；对于直(高)跳取消，使用8(h)jc。<br />
+              例如拉格纳的 (Aerial hit)<span class="BAttack">5B</span> >
+              <span class="CAttack">5C</span> > hjc >
+              <span class="CAttack">jC</span> >
+              <span class="DAttack">jD</span> > jc >
+              <span class="CAttack">jC</span> >
+              <span class="DAttack">jD</span> >
+              <span class="CAttack">j214C</span>~<span class="DAttack"
+                >214D</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>jX</td>
+            <td>
+              <b>跳跃动作</b>；对于直跳动作，使用8jX。<br />
+              例如琴恩的<span class="CAttack">jC</span>或是哈扎马的<span
+                class="DAttack"
+                >j8D</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>[X]</td>
+            <td>
+              <b>按住按键输入</b>。<br />
+              例如神乐的<span class="BAttack">[2]8B</span>，麻衣的<span
+                class="BAttack"
+                >5X[B]</span
+              ><span class="AAttack">6A</span>
+            </td>
+          </tr>
+          <tr>
             <td>]X[</td>
             <td>
-                <i><b>松开按键输入</b></i>。<br>
-                最典型的是亚拉酷泥<span class="BAttack">j6B</span> > <span class="CAttack">j236[C]</span>~<span class="DAttack">[D]</span>,6]<span class="CAttack">C</span><span class="DAttack">D</span>[,<span class="DAttack">236D</span>,<span class="AAttack">6[A]</span> > <span class="BAttack">236[B]</span>
+              <i><b>松开按键输入</b></i
+              >。<br />
+              最典型的是亚拉酷泥<span class="BAttack">j6B</span> >
+              <span class="CAttack">j236[C]</span>~<span class="DAttack"
+                >[D]</span
+              >,6]<span class="CAttack">C</span
+              ><span class="DAttack">D</span>[,<span class="DAttack">236D</span
+              >,<span class="AAttack">6[A]</span> >
+              <span class="BAttack">236[B]</span>
             </td>
-        </tr>
-        <tr>
-          <td>dl.</td>
-          <td>
-            <b>延迟按键输入</b>。<br>
-            例如拉格纳的<span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, (66)<span class="BAttack">5B</span>。
-          </td>
-        </tr>
-        <tr>
-          <td>AA</td>
-          <td>
-            <b>对空</b>，即命中空中的敌人。<br>
-            这可能会造成与地面命中不同的受击状态，可以延展连段。
-          </td>
-        </tr>
-        <tr>
-          <td>RC</td>
-          <td>
-            Rapid Cancel
-          </td>
-        </tr>
-        <tr>
-          <td>ODc</td>
-          <td>
-            Overdrive Cancel
-          </td>
-        </tr>
-      </table>
-    </main>
+          </tr>
+          <tr>
+            <td>dl.</td>
+            <td>
+              <b>延迟按键输入</b>。<br />
+              例如拉格纳的<span class="BAttack">214B</span>~dl.<span
+                class="DAttack"
+                >214D</span
+              >, (66)<span class="BAttack">5B</span>。
+            </td>
+          </tr>
+          <tr>
+            <td>AA</td>
+            <td>
+              <b>对空</b>，即命中空中的敌人。<br />
+              这可能会造成与地面命中不同的受击状态，可以延展连段。
+            </td>
+          </tr>
+          <tr>
+            <td>RC</td>
+            <td>Rapid Cancel</td>
+          </tr>
+          <tr>
+            <td>ODc</td>
+            <td>Overdrive Cancel</td>
+          </tr>
+        </table>
+      </main>
 
-    <h2 class="section-title">基础连段</h2>
+      <h2 class="section-title">基础连段</h2>
 
-    <div class="combo-bar" data-difficulty="Very Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="AAttack">5A</span> > <span class="BAttack">5B</span> > (<span class="CAttack">2C</span>) > <span class="CAttack">5C</span> > <span class="AAttack">214A</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳最基本的板中连段。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5A5B(2C)5C214A.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
+      <div class="combo-bar" data-difficulty="Very Easy">
+        <div class="combo-bar-left">
           <div class="combo-bar-notation">
-            Corner <span class="AAttack">5A</span> > <span class="BAttack">5B</span> > (<span class="CAttack">2C</span>) > <span class="CAttack">5C</span> > <span class="DAttack">623D</span>~<span class="CAttack">236C</span>~<span class="CAttack">236C</span>, <span class="BAttack">5B</span> > <span class="AAttack">6A</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+            <span class="AAttack">5A</span> > <span class="BAttack">5B</span> >
+            (<span class="CAttack">2C</span>) >
+            <span class="CAttack">5C</span> >
+            <span class="AAttack">214A</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">拉格纳最基本的板中连段。</div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5A5B(2C)5C214A.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="AAttack">5A</span> >
+            <span class="BAttack">5B</span> > (<span class="CAttack">2C</span>)
+            > <span class="CAttack">5C</span> >
+            <span class="DAttack">623D</span>~<span class="CAttack">236C</span
+            >~<span class="CAttack">236C</span>,
+            <span class="BAttack">5B</span> > <span class="AAttack">6A</span> >
+            hjc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> > jc >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
           </div>
           <div class="combo-bar-notes">
-            拉格纳最基本的板边连段。<br>
-            如果你的起手修正较高，大概率就必须使用<span class="DAttack">623D</span>~<span class="CAttack">236C</span>~<span class="CAttack">236C</span>, <span class="BAttack">5B</span> > <span class="AAttack">6A</span>的路线。
+            拉格纳最基本的板边连段。<br />
+            如果你的起手修正较高，大概率就必须使用<span class="DAttack"
+              >623D</span
+            >~<span class="CAttack">236C</span>~<span class="CAttack">236C</span
+            >, <span class="BAttack">5B</span> >
+            <span class="AAttack">6A</span>的路线。
           </div>
         </div>
         <div class="combo-bar-right">
-          <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 5A5B5CID.webm" controls muted playsinline preload="metadata"></video>
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 5A5B5CID.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
         </div>
+      </div>
+
+      <h2 class="section-title">核心连段</h2>
+
+      <div class="silver-wolf-box">
+        <div class="silver-wolf-title">
+          <img
+            src="../../../images/SilverWolf.jpg"
+            alt="Silver Wolf"
+            class="silver-wolf-icon"
+          />
+          <span>核心连段指北</span>
+        </div>
+        <p>
+          拉格纳最重要的连段组件有两个：一个是<b>延迟冥王拳</b
+          ><span class="BAttack">214B</span>~<span class="DAttack">214D</span
+          >，一个是对手近距离倒地状态下的<span class="CAttack">22C</span>
+        </p>
+        <p>
+          这两个组件及其后续要求做到完全不失误，这样你的拉格纳才能发挥威力。
+        </p>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="AAttack">5A</span> > <span class="BAttack">5B</span> >
+            <span class="AAttack">6A</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, (66)<span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            拉格纳板中的核心连段，包括了<b>极其重要的</b
+            ><span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >组件。<br />
+            务必熟练掌握，要能够做到不失误。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5A5B6AdlGH.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="BAttack">5B</span> > (<span class="CAttack">5C</span>)
+            > <span class="AAttack">6A</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, <span class="BAttack">5B</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, <span class="BAttack">5B</span> >
+            <span class="AAttack">6A</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>(~<span class="DAttack">214D</span
+            >)
+          </div>
+          <div class="combo-bar-notes">
+            在<span class="BAttack">5B</span
+            >起手的情况下，你可以拓展你的连段。<br />
+            这是经典的<b>双冥王拳</b>连段，不仅不难，还提供了非常优秀的推板和不错的火力。<br />
+            如果最后的<span class="CAttack">j214C</span
+            >不出派生，可以在板中获得贴身压制的机会。<br />
+            这里的<span class="CAttack">5C</span>是可选的，如果不打<span
+              class="CAttack"
+              >5C</span
+            >伤害更高，如果打<span class="CAttack">5C</span
+            >则让这个连段的距离要求没有那么严格。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5B5C6A doubleGH.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > <span class="DAttack">2D</span> >
+            <span class="DAttack">236D</span>~dc,
+            <span class="CAttack">2C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            拉格纳板边的核心连段，也是非常有意思的路线：充分展示了<span
+              class="BAttack"
+              >214B</span
+            >~dl.<span class="DAttack">214D</span>组件延长连段的性能。<br />
+            这里的<span class="DAttack">236D</span>~dc,
+            <span class="CAttack">2C</span
+            >也是经常出现的连段结构，必须要熟练掌握。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 5B5C2DDSdc.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            6T > dl.<span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, (66)<span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            拉格纳板中基本的前投连段。<br />
+            在新手阶段，大家都不会拆投，学会这个连段就能拿到高收益。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 6T.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            4T, 66<span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, (66)<span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            拉格纳板中基本的后投连段。<br />
+            手法上涉及到了微dash(66<span class="BAttack">5B</span
+            >)，不过并不难，努力练习吧。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 4T.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            jT, (dl.)<span class="CAttack">5C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, (66)<span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            拉格纳基本的空投连段。<br />
+            不要忘了Arc的游戏是有空投的。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna JT.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner 6T/jT/4T > (j.)<span class="DAttack">214D</span>,
+            <span class="CAttack">3C</span> > (<span class="DAttack">2D</span>)
+            > <span class="CAttack">22C</span> >
+            <span class="DAttack">236D</span>~dc,
+            <span class="CAttack">2C</span> > <span class="AAttack">6A</span> >
+            hjc > <span class="CAttack">jC</span> > jc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">拉格纳的板边投连段。<br /></div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 6T-4T.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Jubei/Crouching <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > <span class="CAttack">6C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, (66)<span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            拉格纳的蹲姿确认连段。至于为何前面有个兽兵卫(Jubei)，那是因为兽兵卫站着跟别人蹲着一样高，因此可以直接吃蹲姿连段。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5B5C6C.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="BAttack">6B</span> > <span class="DAttack">2D</span> >
+            <span class="DAttack">236D</span>~dc, 最速<span class="CAttack"
+              >5C</span
+            >
+            > hjc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> > jc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            这是板中的中段<span class="BAttack">6B</span>起手的基本连段。<br />
+            这一路线只适用于在贴脸距离命中的情况。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 6B2D236Ddc5C.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy - Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="BAttack">6B</span> >
+            <span class="DAttack">6D</span> > <span class="DAttack">jD</span>,
+            66<span class="BAttack">5B</span> >
+            <span class="CAttack">3C</span> > <span class="CAttack">22C</span> >
+            <span class="DAttack">236D</span>~dc,
+            <span class="CAttack">2C</span> > <span class="AAttack">6A</span> >
+            hjc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> > jc >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span
+            ><br />
+            Corner <span class="BAttack">6B</span> >
+            <span class="DAttack">2D</span> > <span class="CAttack">22C</span> >
+            <span class="DAttack">236D</span>~dc,
+            <span class="CAttack">2C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, <span class="BAttack">5B</span> >
+            <span class="AAttack">6A</span> > hjc >
+            <span class="CAttack">jC</span> > jc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            这里展示了拉格纳板边的两种以<span class="BAttack">6B</span
+            >中段起手的路线，从上到下伤害依次递增。<br />
+            BB的连段其实是很自由的。例如其实还有<span class="BAttack">6B</span>
+            > <span class="AAttack">6A</span> >
+            <span class="DAttack">6D</span> >
+            <span class="DAttack">j214D</span>的路线。<br />
+            不要让这些连段限制了你的想象力。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 6B6DJD665B.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 6B2D22C236D.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="AAttack">214A</span> CH >
+            <span class="CAttack">3C</span> > <span class="CAttack">22C</span> >
+            dc, <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, <span class="BAttack">5B</span> >
+            <span class="AAttack">6A</span> > hjc >
+            <span class="CAttack">jC</span> > jc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            <span class="AAttack">214A</span>康的连段。不过其实能够<span
+              class="AAttack"
+              >214A</span
+            >康的机会并不多。<br />
+            更多的时候，我们可以将其看做一种在<span class="DAttack">5D</span
+            >距离之外的确反起手。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 214ACH.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="DAttack">5D(1)</span> FC >
+            <span class="DAttack">214D</span>, <span class="CAttack">3C</span> >
+            <span class="CAttack">22C</span>~dc,
+            <span class="BAttack">5B</span> > <span class="CAttack">5C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > hjc >
+            <span class="CAttack">jC</span> > jc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            <span class="DAttack">5D</span
+            >是拉格纳的一个Fatal起手式，用它来确反对手的凹吧。<br />
+            无资源4.5k伤害，真的很吓人不是吗？
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 5DFC.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <h2 class="section-title">进阶连段</h2>
+
+      <div class="silver-wolf-box">
+        <div class="silver-wolf-title">
+          <img
+            src="../../../images/SilverWolf.jpg"
+            alt="Silver Wolf"
+            class="silver-wolf-icon"
+          />
+          <span>进阶连段指北</span>
+        </div>
+        <p>
+          在这里展示的拉格纳的进阶连段主要涉及：Rapid Cancel(RC); Micro
+          Dashing(微Dash)。
+        </p>
+        <p>当然，它们不会很难，但是依然要求大量练习来熟练掌握。</p>
+        <p>
+          拉格纳还有一个 <span class="DAttack">6D</span> > dl.<span
+            class="DAttack"
+            >jD</span
+          >
+          whiff 的路线，相当难，因此在这里不展示。
+        </p>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="BAttack">5B</span> > <span class="CAttack">5C</span> >
+            <span class="AAttack">214A</span>~<span class="DAttack">214D</span>
+            > RC, 66<span class="CAttack">5C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, (66)<span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            简单的 <span class="AAttack">214A</span>~<span class="DAttack"
+              >214D</span
+            >
+            > RC 的拓展路线，提供非常强的搬运和伤害，非常值得练习并掌握。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5B5C214ADRC.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="BAttack">5B</span> > <span class="CAttack">5C</span> >
+            <span class="AAttack">214A</span> > RC,
+            <span class="CAttack">6C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, (66)<span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            不要忘记：<span class="AAttack">214A</span
+            >在不派生的前提下打防不确反。在这个前提下，RC可以为你提供进攻的优势。<br />
+            不过你要是没有确认命中自动驾驶RC的话，可以使用这个路线。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5B5C214ARC.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> >
+            <span class="AAttack">214A</span>~<span class="DAttack">214D</span>
+            > RC, <span class="DAttack">6D</span> >
+            <span class="DAttack">j214D</span>,
+            <span class="CAttack">3C</span> > <span class="CAttack">22C</span> >
+            <span class="DAttack">236D</span>~dc,
+            <span class="CAttack">2C</span> > <span class="AAttack">6A</span> >
+            hjc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> > jc >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            如果你在板边自动驾驶了<span class="AAttack">214A</span
+            >，在有气的情况下不要忘了用气来提升伤害。<br />
+            毕竟这游戏的气又不能留到下一把。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 5B5CHF2RC.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> >
+            <span class="AAttack">214A</span> > RC, 微前走
+            <span class="CAttack">3C</span> >
+            <span class="CAttack">22C</span>~dc,
+            <span class="BAttack">5B</span> > <span class="CAttack">5C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, <span class="BAttack">5B</span> >
+            <span class="AAttack">6A</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            这是另一个伤害更高的变体。这一路线有以下注意点：<br />
+            1、微前走是必须的，否则<span class="CAttack">3C</span
+            >距离不够无法命中。<br />
+            2、<span class="CAttack">22C</span
+            >捡起敌人的位置必须离板边有一定距离，也就是<b>在微前走之后你不能贴着对手</b>，否则连段窗口不足无法在dc之后接<span
+              class="BAttack"
+              >5B</span
+            >。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 5B5CHFRC.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="BAttack">6B</span> > <span class="DAttack">2D</span> >
+            <span class="CAttack">22C</span>~dc, 66<span class="CAttack"
+              >5C</span
+            >
+            > hjc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> > jc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            拉格纳的<b>双Dash</b>连段。<br />
+            <span class="CAttack">22C</span>~dc, 66<span class="CAttack"
+              >5C</span
+            >的路线提供了非常优秀的伤害和搬运能力。如果可以的话，尽量掌握。<br />
+            但是<span class="CAttack">5C</span
+            >OTG并非对所有角色都有效。查看这个表格<a
+              href="https://docs.google.com/document/d/1ZUYqhlP27GVr48A7pP021FO7Wnj3xOYyrwHpptE7J5k/edit?pli=1&tab=t.0"
+              >RAGNA OTG 5C HJC AIR COMBO TABLE</a
+            >来了解更详细的信息。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna double-dash.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Hard">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="BAttack">5B</span> > (<span class="CAttack">5C</span>)
+            > <span class="AAttack">6A</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, 66<span class="CAttack">3C</span> >
+            <span class="CAttack">22C</span>~dc, (最速)66<span class="CAttack"
+              >5C</span
+            >
+            > hjc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> > jc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            在延迟冥王拳的基础上，加入了双Dash的连段。<br />
+            在提供不逊于双冥王拳的优秀推板的前提下，伤害比双冥王拳更高。<br />
+            如果使用<span class="CAttack">5C</span
+            >，那么这个连段的时间要求会非常严格。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna GH3CDouble Dash.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <h2 class="section-title">角色限定连段</h2>
+
+      <div class="silver-wolf-box">
+        <div class="silver-wolf-title">
+          <img
+            src="../../../images/SilverWolf.jpg"
+            alt="Silver Wolf"
+            class="silver-wolf-icon"
+          />
+          <span>本节免责声明</span>
+        </div>
+        <p>
+          在这里展示的是拉格纳的角色限定连段路线。本节当然不要求掌握，实战你不仅很难记得这些路线，并且大部分情况下你可以直接烧气来实现更好的伤害。但依旧作为观赏展示。
+        </p>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Hard - Very Hard">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Midscreen, JIN only <span class="BAttack">5B</span> > (<span
+              class="CAttack"
+              >5C</span
+            >) > <span class="AAttack">6A</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, 66<span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > 8jc >
+            <span class="CAttack">jC</span> > 8jc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C(1)</span>, 66<span class="BAttack"
+              >5B</span
+            >
+            > <span class="AAttack">6A</span> > hjc >
+            <span class="CAttack">jC</span> > jc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            .. >
+            <span class="CAttack">j214C(1)</span
+            >的路线被称为<b>Nightkasu</b>，牺牲伤害提供一个强Down，或者让拉格纳可以继续连段。<br />
+            <b>Nightkasu</b
+            >在<b>雷琪儿·阿尔卡多；桃儿卡卡；七夜诚；诺爱儿·梵蜜利欧</b>这四个角色身上无法实现。<br />
+            有关<b>Nightkasu</b>的更多信息以及各角色在不同位置对应的路线，查看这个<a
+              href="https://lite.evernote.com/note/36e5333b-c206-4498-8ca6-159e99f8a383"
+              >Note</a
+            >。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna Nightkatsu example.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <h2 class="section-title">OD/超杀路线</h2>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="BAttack">5B</span> > (<span class="CAttack">5C</span>)
+            > <span class="AAttack">6A</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, 66<span class="CAttack">3C</span> >
+            <span class="CAttack">22C</span> >
+            <span class="DAttack">632146D</span><br />
+            Corner <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > <span class="DAttack">2D</span> >
+            <span class="DAttack">236D</span>~dc,
+            <span class="CAttack">2C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > <span class="DAttack">5D</span> >
+            <span class="CAttack">22C</span> >
+            <span class="DAttack">214214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            拉格纳最基本的接超必杀的方式，就是<span class="CAttack">22C</span
+            >取消超杀。<br />
+            但需要注意的是：<span class="CAttack">22C</span> >
+            <span class="DAttack">214214D</span>是无法在板中成立的。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna CS.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner DS.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > <span class="DAttack">2D</span> >
+            <span class="DAttack">236D</span>~dc,
+            <span class="CAttack">2C</span> >
+            <span class="DAttack">5D(1)</span> >
+            <span class="BAttack">214B</span>~dl.<span class="DAttack"
+              >214D</span
+            >, <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > hjc >
+            <span class="CAttack">jC</span> > <span class="DAttack">jD</span> >
+            jc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+            > RC, <span class="DAttack">632146D</span>
+          </div>
+          <div class="combo-bar-notes">
+            拉格纳板边的核心连段是可以继续拓展的：在100气的情况下，就可以RC再接<span
+              class="DAttack"
+              >632146D</span
+            >斩杀。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner NERCCS.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="BAttack">5B</span> > <span class="CAttack">5C</span> >
+            <span class="CAttack">3C</span> > ODc,
+            <span class="BAttack">5B</span> > <span class="CAttack">5C</span> >
+            hjc > <span class="CAttack">jC</span> > jc >
+            <span class="CAttack">jC</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span
+            >~dc, <span class="DAttack">5D</span>~dc,
+            <span class="BAttack">6B</span> > <span class="DAttack">2D</span> >
+            <span class="CAttack">22C</span> >
+            <span class="DAttack">623D</span>~<span class="CAttack">236C</span
+            >~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">拉格纳基本的2秒OD连段。</div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5B5C3CODC.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > <span class="DAttack">2D</span> >
+            <span class="DAttack">236D</span>~dc,
+            <span class="CAttack">2C</span> > <span class="DAttack">5D</span> >
+            <span class="CAttack">22C</span> > ODc,
+            <span class="DAttack">623D</span>~<span class="CAttack">236C</span
+            >~<span class="DAttack">214D</span>,
+            <span class="DAttack">jD</span> >
+            <span class="DAttack">j214D</span>,
+            <span class="DAttack">632146D</span><br />
+            Corner <span class="BAttack">5B</span> >
+            <span class="CAttack">5C</span> > ODc,
+            <span class="CAttack">5C</span> >
+            <span class="AAttack">214A</span>~<span class="DAttack">214D</span
+            >~dc, <span class="CAttack">5C</span> >
+            <span class="DAttack">5D</span> > <span class="DAttack">236D</span>,
+            <span class="BAttack">6B</span> > <span class="AAttack">6A</span> >
+            hjc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> > jc >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            这里展示了两种板边的2秒OD连段路线。它们不是最优的路线，但足够简单实用。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner OD route1.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner OD route2.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="BAttack">5B</span> > <span class="CAttack">5C</span> >
+            <span class="CAttack">3C</span> > ODc,
+            <span class="BAttack">5B</span> > <span class="CAttack">5C</span> >
+            hjc > <span class="CAttack">jC</span> >
+            <span class="DAttack">jD</span> >
+            <span class="CAttack">j214C</span>~<span class="DAttack">214D</span
+            >~dc, <span class="BAttack">6B</span> >
+            <span class="AAttack">214A</span>~<span class="DAttack">214D</span
+            >~dc, <span class="DAttack">214214D</span>
+          </div>
+          <div class="combo-bar-notes">
+            当你的HP掉至30%的时候，你就能拥有最长的OD时间：取消4秒，裸开8秒。因此，你可以继续拓展你的连段。<br />
+            <span class="DAttack">214214D</span
+            >在OD中能显著的恢复你的生命值，因此我们一般都会接这个超杀。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna ODDC.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            OD <span class="CAttack">5C</span> CH >
+            <span class="DAttack">632146D</span> > RC, 66<span class="BAttack"
+              >6B</span
+            >
+            > <span class="CAttack">22C</span> >
+            <span class="DAttack">236D</span>~dc,
+            <span class="BAttack">214B</span>~<span class="DAttack">214D</span
+            >~jc, <span class="CAttack">j214C</span>~<span class="DAttack"
+              >214D</span
+            >~dc, 裏<span class="CAttack">3C</span> >
+            <span class="AAttack">214A</span>~<span class="DAttack">214D</span
+            >~dc, (dl.<span class="CAttack">3C</span> >)EA
+          </div>
+          <div class="combo-bar-notes">
+            开OD是有无敌的，因此可以用OD起身凹或是防凹。<br />
+            这是拉格纳的最大确反路线。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 8174.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
     </div>
 
-
-
-    <h2 class="section-title">核心连段</h2>
-
-    <div class="silver-wolf-box">
-      <div class="silver-wolf-title">
-        <img src="../../../images/SilverWolf.jpg" alt="Silver Wolf" class="silver-wolf-icon">
-        <span>核心连段指北</span>
-      </div>
-      <p>
-        拉格纳最重要的连段组件有两个：一个是<b>延迟冥王拳</b><span class="BAttack">214B</span>~<span class="DAttack">214D</span>，一个是对手近距离倒地状态下的<span class="CAttack">22C</span>
-      </p>
-      <p>
-        这两个组件及其后续要求做到完全不失误，这样你的拉格纳才能发挥威力。
-      </p>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="AAttack">5A</span> > <span class="BAttack">5B</span> > <span class="AAttack">6A</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, (66)<span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳板中的核心连段，包括了<b>极其重要的</b><span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>组件。<br>
-          务必熟练掌握，要能够做到不失误。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5A5B6AdlGH.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="BAttack">5B</span> > (<span class="CAttack">5C</span>) > <span class="AAttack">6A</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, <span class="BAttack">5B</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, <span class="BAttack">5B</span> > <span class="AAttack">6A</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>(~<span class="DAttack">214D</span>)
-        </div>
-        <div class="combo-bar-notes">
-          在<span class="BAttack">5B</span>起手的情况下，你可以拓展你的连段。<br>
-          这是经典的<b>双冥王拳</b>连段，不仅不难，还提供了非常优秀的推板和不错的火力。<br>
-          如果最后的<span class="CAttack">j214C</span>不出派生，可以在板中获得贴身压制的机会。<br>
-          这里的<span class="CAttack">5C</span>是可选的，如果不打<span class="CAttack">5C</span>伤害更高，如果打<span class="CAttack">5C</span>则让这个连段的距离要求没有那么严格。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5B5C6A doubleGH.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="DAttack">2D</span> > <span class="DAttack">236D</span>~dc, <span class="CAttack">2C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳板边的核心连段，也是非常有意思的路线：充分展示了<span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>组件延长连段的性能。<br>
-          这里的<span class="DAttack">236D</span>~dc, <span class="CAttack">2C</span>也是经常出现的连段结构，必须要熟练掌握。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 5B5C2DDSdc.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          6T > dl.<span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, (66)<span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳板中基本的前投连段。<br>
-          在新手阶段，大家都不会拆投，学会这个连段就能拿到高收益。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 6T.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          4T, 66<span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, (66)<span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳板中基本的后投连段。<br>
-          手法上涉及到了微dash(66<span class="BAttack">5B</span>)，不过并不难，努力练习吧。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 4T.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          jT, (dl.)<span class="CAttack">5C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, (66)<span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳基本的空投连段。<br>
-          不要忘了Arc的游戏是有空投的。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna JT.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner 6T/jT/4T > (j.)<span class="DAttack">214D</span>, <span class="CAttack">3C</span> > (<span class="DAttack">2D</span>) > <span class="CAttack">22C</span> > <span class="DAttack">236D</span>~dc, <span class="CAttack">2C</span> > <span class="AAttack">6A</span> > hjc > <span class="CAttack">jC</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳的板边投连段。<br>
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 6T-4T.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Jubei/Crouching <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="CAttack">6C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, (66)<span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳的蹲姿确认连段。至于为何前面有个兽兵卫(Jubei)，那是因为兽兵卫站着跟别人蹲着一样高，因此可以直接吃蹲姿连段。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5B5C6C.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="BAttack">6B</span> > <span class="DAttack">2D</span> > <span class="DAttack">236D</span>~dc, 最速<span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          这是板中的中段<span class="BAttack">6B</span>起手的基本连段。<br>
-          这一路线只适用于在贴脸距离命中的情况。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 6B2D236Ddc5C.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy - Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="BAttack">6B</span> > <span class="DAttack">6D</span> > <span class="DAttack">jD</span>, 66<span class="BAttack">5B</span> > <span class="CAttack">3C</span> > <span class="CAttack">22C</span> > <span class="DAttack">236D</span>~dc, <span class="CAttack">2C</span> > <span class="AAttack">6A</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span><br>
-          Corner <span class="BAttack">6B</span> > <span class="DAttack">2D</span> > <span class="CAttack">22C</span> > <span class="DAttack">236D</span>~dc, <span class="CAttack">2C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, <span class="BAttack">5B</span> > <span class="AAttack">6A</span> > hjc > <span class="CAttack">jC</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          这里展示了拉格纳板边的两种以<span class="BAttack">6B</span>中段起手的路线，从上到下伤害依次递增。<br>
-          BB的连段其实是很自由的。例如其实还有<span class="BAttack">6B</span> > <span class="AAttack">6A</span> > <span class="DAttack">6D</span> > <span class="DAttack">j214D</span>的路线。<br>
-          不要让这些连段限制了你的想象力。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 6B6DJD665B.webm" controls muted playsinline preload="metadata"></video>
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 6B2D22C236D.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="AAttack">214A</span> CH > <span class="CAttack">3C</span> > <span class="CAttack">22C</span> > dc, <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, <span class="BAttack">5B</span> > <span class="AAttack">6A</span> > hjc > <span class="CAttack">jC</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          <span class="AAttack">214A</span>康的连段。不过其实能够<span class="AAttack">214A</span>康的机会并不多。<br>
-          更多的时候，我们可以将其看做一种在<span class="DAttack">5D</span>距离之外的确反起手。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 214ACH.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="DAttack">5D(1)</span> FC > <span class="DAttack">214D</span>, <span class="CAttack">3C</span> > <span class="CAttack">22C</span>~dc, <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          <span class="DAttack">5D</span>是拉格纳的一个Fatal起手式，用它来确反对手的凹吧。<br>
-          无资源4.5k伤害，真的很吓人不是吗？
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 5DFC.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <h2 class="section-title">进阶连段</h2>
-
-    <div class="silver-wolf-box">
-      <div class="silver-wolf-title">
-        <img src="../../../images/SilverWolf.jpg" alt="Silver Wolf" class="silver-wolf-icon">
-        <span>进阶连段指北</span>
-      </div>
-      <p>
-        在这里展示的拉格纳的进阶连段主要涉及：Rapid Cancel(RC); Micro Dashing(微Dash)。
-      </p>
-      <p>
-        当然，它们不会很难，但是依然要求大量练习来熟练掌握。
-      </p>
-      <p>
-        拉格纳还有一个 <span class="DAttack">6D</span> > dl.<span class="DAttack">jD</span> whiff 的路线，相当难，因此在这里不展示。
-      </p>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="AAttack">214A</span>~<span class="DAttack">214D</span> > RC, 66<span class="CAttack">5C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, (66)<span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          简单的 <span class="AAttack">214A</span>~<span class="DAttack">214D</span> > RC 的拓展路线，提供非常强的搬运和伤害，非常值得练习并掌握。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5B5C214ADRC.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="AAttack">214A</span> > RC, <span class="CAttack">6C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, (66)<span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          不要忘记：<span class="AAttack">214A</span>在不派生的前提下打防不确反。在这个前提下，RC可以为你提供进攻的优势。<br>
-          不过你要是没有确认命中自动驾驶RC的话，可以使用这个路线。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5B5C214ARC.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="AAttack">214A</span>~<span class="DAttack">214D</span> > RC, <span class="DAttack">6D</span> > <span class="DAttack">j214D</span>, <span class="CAttack">3C</span> > <span class="CAttack">22C</span> > <span class="DAttack">236D</span>~dc, <span class="CAttack">2C</span> > <span class="AAttack">6A</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          如果你在板边自动驾驶了<span class="AAttack">214A</span>，在有气的情况下不要忘了用气来提升伤害。<br>
-          毕竟这游戏的气又不能留到下一把。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 5B5CHF2RC.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="AAttack">214A</span> > RC, 微前走 <span class="CAttack">3C</span> > <span class="CAttack">22C</span>~dc, <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, <span class="BAttack">5B</span> > <span class="AAttack">6A</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span> 
-        </div>
-        <div class="combo-bar-notes">
-          这是另一个伤害更高的变体。这一路线有以下注意点：<br>
-          1、微前走是必须的，否则<span class="CAttack">3C</span>距离不够无法命中。<br>
-          2、<span class="CAttack">22C</span>捡起敌人的位置必须离板边有一定距离，也就是<b>在微前走之后你不能贴着对手</b>，否则连段窗口不足无法在dc之后接<span class="BAttack">5B</span>。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner 5B5CHFRC.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="BAttack">6B</span> > <span class="DAttack">2D</span> > <span class="CAttack">22C</span>~dc, 66<span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳的<b>双Dash</b>连段。<br>
-          <span class="CAttack">22C</span>~dc, 66<span class="CAttack">5C</span>的路线提供了非常优秀的伤害和搬运能力。如果可以的话，尽量掌握。<br>
-          但是<span class="CAttack">5C</span>OTG并非对所有角色都有效。查看这个表格<a href="https://docs.google.com/document/d/1ZUYqhlP27GVr48A7pP021FO7Wnj3xOYyrwHpptE7J5k/edit?pli=1&tab=t.0">RAGNA OTG 5C HJC AIR COMBO TABLE</a>来了解更详细的信息。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna double-dash.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Hard">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="BAttack">5B</span> > (<span class="CAttack">5C</span>) > <span class="AAttack">6A</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, 66<span class="CAttack">3C</span> > <span class="CAttack">22C</span>~dc, (最速)66<span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          在延迟冥王拳的基础上，加入了双Dash的连段。<br>
-          在提供不逊于双冥王拳的优秀推板的前提下，伤害比双冥王拳更高。<br>
-          如果使用<span class="CAttack">5C</span>，那么这个连段的时间要求会非常严格。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna GH3CDouble Dash.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <h2 class="section-title">角色限定连段</h2>
-
-    <div class="silver-wolf-box">
-      <div class="silver-wolf-title">
-        <img src="../../../images/SilverWolf.jpg" alt="Silver Wolf" class="silver-wolf-icon">
-        <span>本节免责声明</span>
-      </div>
-      <p>
-        在这里展示的是拉格纳的角色限定连段路线。本节当然不要求掌握，实战你不仅很难记得这些路线，并且大部分情况下你可以直接烧气来实现更好的伤害。但依旧作为观赏展示。
-      </p>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Hard - Very Hard">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Midscreen, JIN only <span class="BAttack">5B</span> > (<span class="CAttack">5C</span>) > <span class="AAttack">6A</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, 66<span class="BAttack">5B</span> > <span class="CAttack">5C</span> > 8jc > <span class="CAttack">jC</span> > 8jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C(1)</span>, 66<span class="BAttack">5B</span> > <span class="AAttack">6A</span> > hjc > <span class="CAttack">jC</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          .. > <span class="CAttack">j214C(1)</span>的路线被称为<b>Nightkasu</b>，牺牲伤害提供一个强Down，或者让拉格纳可以继续连段。<br>
-          <b>Nightkasu</b>在<b>雷琪儿·阿尔卡多；桃儿卡卡；七夜诚；诺爱儿·梵蜜利欧</b>这四个角色身上无法实现。<br>
-          有关<b>Nightkasu</b>的更多信息以及各角色在不同位置对应的路线，查看这个<a href="https://lite.evernote.com/note/36e5333b-c206-4498-8ca6-159e99f8a383">Note</a>。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna Nightkatsu example.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <h2 class="section-title">OD/超杀路线</h2>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="BAttack">5B</span> > (<span class="CAttack">5C</span>) > <span class="AAttack">6A</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, 66<span class="CAttack">3C</span> > <span class="CAttack">22C</span> > <span class="DAttack">632146D</span><br>
-          Corner <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="DAttack">2D</span> > <span class="DAttack">236D</span>~dc, <span class="CAttack">2C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="DAttack">5D</span> > <span class="CAttack">22C</span> > <span class="DAttack">214214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳最基本的接超必杀的方式，就是<span class="CAttack">22C</span>取消超杀。<br>
-          但需要注意的是：<span class="CAttack">22C</span> > <span class="DAttack">214214D</span>是无法在板中成立的。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna CS.webm" controls muted playsinline preload="metadata"></video>
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner DS.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="DAttack">2D</span> > <span class="DAttack">236D</span>~dc, <span class="CAttack">2C</span> > <span class="DAttack">5D(1)</span> > <span class="BAttack">214B</span>~dl.<span class="DAttack">214D</span>, <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span> > RC, <span class="DAttack">632146D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳板边的核心连段是可以继续拓展的：在100气的情况下，就可以RC再接<span class="DAttack">632146D</span>斩杀。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner NERCCS.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="CAttack">3C</span> > ODc, <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > jc > <span class="CAttack">jC</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>~dc, <span class="DAttack">5D</span>~dc, <span class="BAttack">6B</span> > <span class="DAttack">2D</span> > <span class="CAttack">22C</span> > <span class="DAttack">623D</span>~<span class="CAttack">236C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          拉格纳基本的2秒OD连段。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 5B5C3CODC.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="DAttack">2D</span> > <span class="DAttack">236D</span>~dc, <span class="CAttack">2C</span> > <span class="DAttack">5D</span> > <span class="CAttack">22C</span> > ODc, <span class="DAttack">623D</span>~<span class="CAttack">236C</span>~<span class="DAttack">214D</span>, <span class="DAttack">jD</span> > <span class="DAttack">j214D</span>, <span class="DAttack">632146D</span><br>
-          Corner <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > ODc, <span class="CAttack">5C</span> > <span class="AAttack">214A</span>~<span class="DAttack">214D</span>~dc, <span class="CAttack">5C</span> > <span class="DAttack">5D</span> > <span class="DAttack">236D</span>, <span class="BAttack">6B</span> > <span class="AAttack">6A</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > jc > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          这里展示了两种板边的2秒OD连段路线。它们不是最优的路线，但足够简单实用。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner OD route1.webm" controls muted playsinline preload="metadata"></video>
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna corner OD route2.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > <span class="CAttack">3C</span> > ODc, <span class="BAttack">5B</span> > <span class="CAttack">5C</span> > hjc > <span class="CAttack">jC</span> > <span class="DAttack">jD</span> > <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>~dc, <span class="BAttack">6B</span> > <span class="AAttack">214A</span>~<span class="DAttack">214D</span>~dc, <span class="DAttack">214214D</span>
-        </div>
-        <div class="combo-bar-notes">
-          当你的HP掉至30%的时候，你就能拥有最长的OD时间：取消4秒，裸开8秒。因此，你可以继续拓展你的连段。<br>
-          <span class="DAttack">214214D</span>在OD中能显著的恢复你的生命值，因此我们一般都会接这个超杀。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna ODDC.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          OD <span class="CAttack">5C</span> CH > <span class="DAttack">632146D</span> > RC, 66<span class="BAttack">6B</span> > <span class="CAttack">22C</span> > <span class="DAttack">236D</span>~dc, <span class="BAttack">214B</span>~<span class="DAttack">214D</span>~jc, <span class="CAttack">j214C</span>~<span class="DAttack">214D</span>~dc, 裏<span class="CAttack">3C</span> > <span class="AAttack">214A</span>~<span class="DAttack">214D</span>~dc, (dl.<span class="CAttack">3C</span> >)EA
-        </div>
-        <div class="combo-bar-notes">
-          开OD是有无敌的，因此可以用OD起身凹或是防凹。<br>
-          这是拉格纳的最大确反路线。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/BlazblueCentralFiction/Ragna/Ragna 8174.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-  </div>
-
-  <script src="../../../script.js"></script>
-</body>
+    <script src="../../../script.js"></script>
+  </body>
 </html>
