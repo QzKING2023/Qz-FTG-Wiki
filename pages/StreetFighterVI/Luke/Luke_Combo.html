@@ -1,505 +1,905 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Street Fighter VI/Luke/Combo</title>
-  <link rel="stylesheet" href="../../../style.css">
-</head>
-<body>
-  <div class="main-wrapper">
-    <header class="title-bar">
-      <img src="../../../images/StreetFighterVI/Luke/84px-SF6_Luke_Icon.png" alt="Luke_Icon" class="title-icon">
-      <h1>卢克 连段指南</h1>
-      <a href="../SF6_Main.html" class="back-btn">← SF6</a>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Street Fighter VI/Luke/Combo</title>
+    <link rel="stylesheet" href="../../../style.css" />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <header class="title-bar">
+        <img
+          src="../../../images/StreetFighterVI/Luke/84px-SF6_Luke_Icon.png"
+          alt="Luke_Icon"
+          class="title-icon"
+        />
+        <h1>卢克 连段指南</h1>
+        <a href="../SF6_Main.html" class="back-btn">← SF6</a>
+      </header>
 
-    <nav class="page-nav-bar">
-      <a class="page-nav-btn">Overview</a>
-      <a class="page-nav-btn">Combo</a>
-    </nav>
+      <nav class="page-nav-bar">
+        <a class="page-nav-btn">Overview</a>
+        <a class="page-nav-btn">Combo</a>
+      </nav>
 
-    <h2 class="section-title">在开始之前</h2>
-    <main class="content-area">
-      本节展示在连段指南中，你可能会遇到的各种标识以及其代表的意义。
-      <h3 class="section-subtitle">数字小键盘记法</h3>
-      数字小键盘记法为格斗游戏的操作输入提供了一套标准化体系。它将方向键输入映射到计算器或计算机的数字小键盘上，且始终假设玩家角色面向右侧。
-      <img src="../../../images/Numpad-Notion.png" class="content-img">
-      <h3 class="section-subtitle">其余标识</h3>
-      <table class="legend-table">
-        <tr>
-          <td>标识</td>
-          <td>意义</td>
-        </tr>
-        <tr>
-          <td>></td>
-          <td>
-            <b>取消</b>前一个动作进入下一个动作<br>
-            例如普通技 > 必杀技(<span class="LightAttack">2LP</span> > <span class="HeavyAttack">623HP</span>)
-          </td>
-        </tr>
-        <tr>
-          <td>~</td>
-          <td>
-            <b>取消</b>前一个动作进入其<b>追加派生</b><br>
-            例如卢克的TC(<span class="LightAttack">5LP</span>~<span class="MediumAttack">MP</span>~<span class="HeavyAttack">HP</span>)或是OD升龙的派生(<span class="Overdrive">623PP</span>~<span class="Overdrive">PP</span>)
-          </td>
-        </tr>
-        <tr>
-          <td>,</td>
-          <td>
-            <b>连接</b>前一个动作进入下一个动作。这<b>不是取消</b>，而是帧数能够接上。<br>
-            例如卢克的<span class="MediumAttack">2MP</span>,<span class="LightAttack">5LK</span>目押或是肯的<span class="LightAttack">2LP</span>,<span class="LightAttack">5LK</span>目押。
-          </td>
-        </tr>
-        <tr>
-          <td>jX</td>
-          <td>
-            <b>跳跃动作</b>；对于直跳动作，使用8jX。<br>
-            例如Dj的<span class="LightAttack">j2LK</span>或是隆的<span class="SuperArt">j214K</span>
-          </td>
-        </tr>
-        <tr>
-          <td>X/Y</td>
-          <td>
-            表示你可以使用两种动作中的某一种。<br>
-            如<span class="LightAttack">2LP</span>/<span class="LightAttack">2LK</span>。
-          </td>
-        </tr>
-        <tr>
-          <td>[X]</td>
-          <td>
-            <b>按住按键输入</b>。<br>
-            例如卢克的<span class="LightAttack">214[LP]</span>代表<b>蓄力</b><span class="LightAttack">214LP</span>
-          </td>
-        </tr>
-        <tr>
-          <td>dl.</td>
-          <td>
-            <b>延迟按键输入</b>。<br>
-            例如肯的<span class="MediumAttack">236MK</span>~dl.<span class="HeavyAttack">6HK</span>,<span class="HeavyAttack">623HP</span>。
-          </td>
-        </tr>
-        <tr>
-          <td>AA</td>
-          <td>
-            <b>对空</b>，即命中空中的敌人。<br>
-            这可能会造成与地面命中不同的受击状态，可以延展连段。
-          </td>
-        </tr>
-        <tr>
-          <td>Y xN<br>{Y} xN</td>
-          <td>
-            <b>重复某一片段N次</b>。<br>
-            例如 <span class="LightAttack">2LP</span> x3 或者 {<span class="HeavyAttack">2HP</span> > DRC} x2。
-          </td>
-        </tr>
-        <tr>
-          <td>Y > DRC</td>
-          <td>
-            <b>斗气冲刺取消</b>，消耗三格斗气。<br>
-            例如 <span class="HeavyAttack">5HP</span> > DRC
-          </td>
-        </tr>
-        <tr>
-          <td>DR~Y</td>
-          <td>
-            <b>斗气冲刺接入动作Y</b>(取消冲刺帧接入后续的攻击)。<br>
-            例如 <span class="HeavyAttack">5HP</span> > DRC
-          </td>
-        </tr>
-      </table>
-    </main>
+      <h2 class="section-title">在开始之前</h2>
+      <main class="content-area">
+        本节展示在连段指南中，你可能会遇到的各种标识以及其代表的意义。
+        <h3 class="section-subtitle">数字小键盘记法</h3>
+        数字小键盘记法为格斗游戏的操作输入提供了一套标准化体系。它将方向键输入映射到计算器或计算机的数字小键盘上，且始终假设玩家角色面向右侧。
+        <img src="../../../images/Numpad-Notion.png" class="content-img" />
+        <h3 class="section-subtitle">其余标识</h3>
+        <table class="legend-table">
+          <tr>
+            <td>标识</td>
+            <td>意义</td>
+          </tr>
+          <tr>
+            <td>></td>
+            <td>
+              <b>取消</b>前一个动作进入下一个动作<br />
+              例如普通技 > 必杀技(<span class="LightAttack">2LP</span> >
+              <span class="HeavyAttack">623HP</span>)
+            </td>
+          </tr>
+          <tr>
+            <td>~</td>
+            <td>
+              <b>取消</b>前一个动作进入其<b>追加派生</b><br />
+              例如卢克的TC(<span class="LightAttack">5LP</span>~<span
+                class="MediumAttack"
+                >MP</span
+              >~<span class="HeavyAttack">HP</span>)或是OD升龙的派生(<span
+                class="Overdrive"
+                >623PP</span
+              >~<span class="Overdrive">PP</span>)
+            </td>
+          </tr>
+          <tr>
+            <td>,</td>
+            <td>
+              <b>连接</b
+              >前一个动作进入下一个动作。这<b>不是取消</b>，而是帧数能够接上。<br />
+              例如卢克的<span class="MediumAttack">2MP</span>,<span
+                class="LightAttack"
+                >5LK</span
+              >目押或是肯的<span class="LightAttack">2LP</span>,<span
+                class="LightAttack"
+                >5LK</span
+              >目押。
+            </td>
+          </tr>
+          <tr>
+            <td>jX</td>
+            <td>
+              <b>跳跃动作</b>；对于直跳动作，使用8jX。<br />
+              例如Dj的<span class="LightAttack">j2LK</span>或是隆的<span
+                class="SuperArt"
+                >j214K</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>X/Y</td>
+            <td>
+              表示你可以使用两种动作中的某一种。<br />
+              如<span class="LightAttack">2LP</span>/<span class="LightAttack"
+                >2LK</span
+              >。
+            </td>
+          </tr>
+          <tr>
+            <td>[X]</td>
+            <td>
+              <b>按住按键输入</b>。<br />
+              例如卢克的<span class="LightAttack">214[LP]</span>代表<b>蓄力</b
+              ><span class="LightAttack">214LP</span>
+            </td>
+          </tr>
+          <tr>
+            <td>dl.</td>
+            <td>
+              <b>延迟按键输入</b>。<br />
+              例如肯的<span class="MediumAttack">236MK</span>~dl.<span
+                class="HeavyAttack"
+                >6HK</span
+              >,<span class="HeavyAttack">623HP</span>。
+            </td>
+          </tr>
+          <tr>
+            <td>AA</td>
+            <td>
+              <b>对空</b>，即命中空中的敌人。<br />
+              这可能会造成与地面命中不同的受击状态，可以延展连段。
+            </td>
+          </tr>
+          <tr>
+            <td>Y xN<br />{Y} xN</td>
+            <td>
+              <b>重复某一片段N次</b>。<br />
+              例如 <span class="LightAttack">2LP</span> x3 或者 {<span
+                class="HeavyAttack"
+                >2HP</span
+              >
+              > DRC} x2。
+            </td>
+          </tr>
+          <tr>
+            <td>Y > DRC</td>
+            <td>
+              <b>斗气冲刺取消</b>，消耗三格斗气。<br />
+              例如 <span class="HeavyAttack">5HP</span> > DRC
+            </td>
+          </tr>
+          <tr>
+            <td>DR~Y</td>
+            <td>
+              <b>斗气冲刺接入动作Y</b>(取消冲刺帧接入后续的攻击)。<br />
+              例如 <span class="HeavyAttack">5HP</span> > DRC
+            </td>
+          </tr>
+        </table>
+      </main>
 
-    <h2 class="section-title">基础连段</h2>
+      <h2 class="section-title">基础连段</h2>
 
-    <div class="combo-bar" data-difficulty="Very Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="LightAttack">2LP</span>/<span class="LightAttack">2LK</span> > <span class="LightAttack">2LP</span> > <span class="LightAttack">2LP</span> > <span class="LightAttack">214LP</span>
+      <div class="combo-bar" data-difficulty="Very Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="LightAttack">2LP</span>/<span class="LightAttack"
+              >2LK</span
+            >
+            > <span class="LightAttack">2LP</span> >
+            <span class="LightAttack">2LP</span> >
+            <span class="LightAttack">214LP</span>
+          </div>
+          <div class="combo-bar-notes">
+            基本的轻攻击三点确认。<br />
+            卢克的<span class="LightAttack">2LP</span>不能连打取消至<span
+              class="LightAttack"
+              >5LP</span
+            >，这一点需要注意。
+          </div>
         </div>
-        <div class="combo-bar-notes">
-          基本的轻攻击三点确认。<br>
-          卢克的<span class="LightAttack">2LP</span>不能连打取消至<span class="LightAttack">5LP</span>，这一点需要注意。
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke 2LP3-214LP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
         </div>
       </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke 2LP3-214LP.webm" controls muted playsinline preload="metadata"></video>
+
+      <div class="combo-bar" data-difficulty="Very Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="LightAttack">2LP</span>/<span
+              class="LightAttack"
+              >2LK</span
+            >
+            > <span class="LightAttack">2LP</span> >
+            <span class="LightAttack">2LP</span> >
+            <span class="LightAttack">214LP</span>,<span class="LightAttack"
+              >623LP</span
+            >
+          </div>
+          <div class="combo-bar-notes">
+            基本轻攻击三点确认的板边版本：在新赛季更新之后，板边<span
+              class="LightAttack"
+              >214LP</span
+            >可以接上<span class="LightAttack">623LP</span>以提升火力。<br />
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke Corner 2LP3-214LP-623LP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="LightAttack">5LP</span>~<span class="MediumAttack"
+              >MP</span
+            >~<span class="HeavyAttack">HP</span> >
+            <span class="HeavyAttack">214HP</span>
+          </div>
+          <div class="combo-bar-notes">
+            卢克<span class="LightAttack">5LP</span>TC的连段。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke [5LPMPHP]-214HP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="MediumAttack">2MP</span> >
+            <span class="MediumAttack">214MP</span>
+          </div>
+          <div class="combo-bar-notes">
+            中攻击确认。必须要说明的是：<span class="MediumAttack">214MP</span
+            >打防是确反的，因此这不是一个实用的复合。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke 2MP-214MP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="MediumAttack">2MP</span>,<span class="LightAttack"
+              >5LK</span
+            >
+            > <span class="LightAttack">214LP</span>
+          </div>
+          <div class="combo-bar-notes">
+            <span class="MediumAttack">2MP</span
+            >的近距离命中确认，本质上是一个两点确认：<span class="LightAttack"
+              >5LK</span
+            >打防安全，因此确认命中再输入<span class="LightAttack">214LP</span
+            >。<br />
+            不过 <span class="MediumAttack">2MP</span> >
+            <span class="LightAttack">5LK</span> 是一个目押，需要稍微练习练习。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke 2MP 5LK 214LP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="MediumAttack">2MP</span>,<span
+              class="LightAttack"
+              >5LK</span
+            >
+            > <span class="LightAttack">214LP</span>,<span class="LightAttack"
+              >623LP</span
+            >
+          </div>
+          <div class="combo-bar-notes">上一个连段的板边版本。</div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke Corner 2MP 5LK 214LP 623LP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="HeavyAttack">5HP</span> >
+            <span class="HeavyAttack">214HP</span>
+          </div>
+          <div class="combo-bar-notes">
+            基本的<span class="HeavyAttack">5HP</span>命中确认。<br />
+            未蓄力的<span class="HeavyAttack">214HP</span>打防<span
+              style="color: #a31b00"
+              >-4</span
+            >，通常是会被确反的。但如果距离把控得当，这是一个相当安全的招式。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke 5HP-214HP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="HeavyAttack">2HP</span>/<span
+              class="HeavyAttack"
+              >5HP</span
+            >
+            > <span class="LightAttack">214[LP]</span>,<span class="LightAttack"
+              >214LP</span
+            >,<span class="LightAttack">623LP</span>
+          </div>
+          <div class="combo-bar-notes">
+            基本的板边连段路线，无需完美蓄力。<br />
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke Corner 5HP 214[LP].webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Not-Cornered ... > <span class="HeavyAttack">2HP</span> >
+            <span class="MediumAttack">214[MP]</span>,<span class="LightAttack"
+              >214[LP]</span
+            >,<span class="MediumAttack">214MP</span>
+          </div>
+          <div class="combo-bar-notes">
+            新版本更新之后，<span class="HeavyAttack">2HP</span
+            >可以直接接蓄满的<span class="MediumAttack">214MP</span>。<br />
+            如果你实在不会完美蓄力，就这样接民工三拳。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke DI.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Close to Corner ... > <span class="HeavyAttack">2HP</span> >
+            <span class="MediumAttack">(pf.)214[MP]</span>,<span
+              class="LightAttack"
+              >623LP</span
+            >
+          </div>
+          <div class="combo-bar-notes">
+            如果离板边过近，就无法接入<span class="LightAttack"
+              >(pf.)214[LP]</span
+            >，使用升龙替代。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke close-to-corner DI.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <h2 class="section-title">核心连段</h2>
+
+      <div class="silver-wolf-box">
+        <div class="silver-wolf-title">
+          <img
+            src="../../../images/SilverWolf.jpg"
+            alt="Silver Wolf"
+            class="silver-wolf-icon"
+          />
+          <span>核心连段指北</span>
+        </div>
+        <p>卢克连段的核心在于熟练掌握他的 <b>完美蓄力(pf.214XP)</b> 的时机。</p>
+        <p>
+          刚上手的时候，可以尝试观察蓄力时卢克手臂上的粒子效果，在闪光的那一刻松开按键。
+        </p>
+        <p>随着不断地练习，你最终会形成肌肉记忆。</p>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Not-Cornered <span class="HeavyAttack">2HP</span>/Punish
+            <span class="HeavyAttack">5HP</span> >
+            <span class="MediumAttack">pf.214[MP]</span>,<span
+              class="LightAttack"
+              >pf.214[LP]</span
+            >,<span class="HeavyAttack">214HP</span>
+          </div>
+          <div class="combo-bar-notes">
+            卢克最核心且常见的<b>完美蓄力</b>路线，通常被称为“民工三连”。<br />
+            如果你不知道该怎么连，只要能命中<span class="HeavyAttack">2HP</span
+            >且<b>不在板边</b>就可以打这一套。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke Basic pf214P route.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="HeavyAttack">2HP</span>/<span
+              class="HeavyAttack"
+              >5HP</span
+            >
+            > <span class="LightAttack">pf.214[LP]</span>,<span
+              class="MediumAttack"
+              >236MP</span
+            >,<span class="MediumAttack">623MP</span>
+          </div>
+          <div class="combo-bar-notes">
+            卢克最核心且常见的板边连段路线。稳定且伤害不低。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke pf214[LP]-236MP-623MP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Not-Cornered <span class="HeavyAttack">2HP</span>/Punish
+            <span class="HeavyAttack">5HP</span> >
+            <span class="MediumAttack">pf.214[MP]</span>,<span class="FullInv"
+              >DR</span
+            >
+            <span class="HeavyAttack">5HP</span> >
+            <span class="LightAttack">pf.214[LP]</span>,<span class="SuperArt"
+              >236K~P</span
+            >
+          </div>
+          <div class="combo-bar-notes">
+            卢克的常见板中<span class="SuperArt">pf.214[P]</span
+            >路线变体。<br />
+            提供了更好的后续压制和推板，并且伤害依旧可观。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke pf214[MP]-DR5HP-pf214[LP]-236KP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="HeavyAttack">2HP</span>/Punish
+            <span class="HeavyAttack">5HP</span> >
+            <span class="MediumAttack">pf.214[MP]</span>,<span class="FullInv"
+              >DR</span
+            >
+            <span class="HeavyAttack">5HP</span> >
+            <span class="HeavyAttack">pf.214[HP]</span>
+          </div>
+          <div class="combo-bar-notes">
+            卢克另一个常见的板中<span class="SuperArt">pf.214[P]</span
+            >路线变体。<br />
+            后续使用<span class="LightAttack">5LP</span
+            >卡帧在板边形成安全跳。<br />
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke-Safety-Jump.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Easy - Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            jump-ins,<span class="HeavyAttack">2HP</span> >
+            <span class="SuperArt">Follow ups</span>
+          </div>
+          <div class="combo-bar-notes">
+            卢克跳入之后直接接<span class="HeavyAttack">2HP</span
+            >及其后续即可。<br />
+            只要打点足够低，哪怕是<span class="LightAttack">jLP</span>和<span
+              class="LightAttack"
+              >jLK</span
+            >也可以直接接<span class="HeavyAttack">2HP</span>。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke-Basic-Jump-in.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Easy - Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            ... > <span class="FullInv">DRC</span>
+            <span class="MediumAttack">2MP</span>,<span class="HeavyAttack"
+              >2HP</span
+            >
+            > <span class="SuperArt">Follow ups</span>
+          </div>
+          <div class="combo-bar-notes">
+            卢克最基本、最常见的斗气冲锋取消路线。<br />
+            <span class="FullInv">DRC</span>
+            <span class="MediumAttack">2MP</span>,<span class="HeavyAttack"
+              >2HP</span
+            >对于每个卢克玩家来说都是必须掌握的目押。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke Basic DRC.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Punish <span class="LightAttack">2LP</span>,<span
+              class="LightAttack"
+              >5LP</span
+            >~<span class="MediumAttack">MP</span>~<span class="HeavyAttack"
+              >HP</span
+            >
+            > <span class="HeavyAttack">214HP</span>
+          </div>
+          <div class="combo-bar-notes">
+            卢克<span class="LightAttack">2LP</span>确反的基本连段。<br />
+            尽管<span class="LightAttack">2LP</span>确反能够接<span
+              class="HeavyAttack"
+              >2HP</span
+            >，但是如果是极限距离，则<span class="HeavyAttack">2HP</span
+            >距离不够。这一套最为稳定。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke PC 2LP [5LPMPHP] 214HP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy - Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Punish <span class="MediumAttack">214MP</span>,<span
+              class="HeavyAttack"
+              >2HP</span
+            >
+            > <span class="SuperArt">Follow ups</span>
+          </div>
+          <div class="combo-bar-notes">卢克的大确反起手连段结构。</div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke PC 214MP 2HP.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <h2 class="section-title">进阶连段</h2>
+
+      <div class="combo-bar" data-difficulty="Hard">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Not-Cornered <span class="HeavyAttack">2HP</span>/Punish
+            <span class="HeavyAttack">5HP</span> >
+            <span class="MediumAttack">pf.214[MP]</span>,dl.<span
+              class="Overdrive"
+              >214PP~PP</span
+            >
+          </div>
+          <div class="combo-bar-notes">
+            卢克的伤害特化连段，通常称为<b>“DDT”</b>。<br />
+            延迟<span class="Overdrive">214PP</span
+            >的输入时机需要多加练习才能稳定。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke DDT.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Hard">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="HeavyAttack">2HP</span>/<span
+              class="HeavyAttack"
+              >5HP</span
+            >
+            > <span class="LightAttack">pf.214[LP]</span>,9<span
+              class="MediumAttack"
+              >jMP</span
+            >
+            > dl.<span class="SuperArt">j214[P](半蓄力)</span>,<span
+              class="LightAttack"
+              >623LP</span
+            >
+          </div>
+          <div class="combo-bar-notes">
+            卢克板边的最优路线。<br />
+            在<span class="LightAttack">pf.214[LP]</span>最速前跳<span
+              class="MediumAttack"
+              >jMP</span
+            >，之后再延迟半蓄力<span class="SuperArt">j214[P]</span>。<br />
+            这一路线可以接<span class="LightAttack">623LP</span>、<span
+              class="SuperArt"
+              >SA1</span
+            >、<span class="SuperArt">SA2</span>、<span class="SuperArt"
+              >SA3</span
+            >，功能性强大。<br />
+            但是如果想要接<span class="SuperArt">SA3</span
+            >，由于其发生慢，因此需要<i
+              ><b>延迟的时机尽可能晚，半蓄力的时间尽可能长</b></i
+            >，需要大量练习。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke-pf214LP-JMP-dlJ214P.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <h2 class="section-title">SA路线</h2>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Not-Cornered <span class="HeavyAttack">2HP</span>/Punish
+            <span class="HeavyAttack">5HP</span> >
+            <span class="MediumAttack">pf.214[MP]</span>,<span class="FullInv"
+              >DR</span
+            >
+            <span class="HeavyAttack">5HP</span> >
+            <span class="LightAttack">pf.214[LP]</span>,dl.<span
+              class="SuperArt"
+              >236236P</span
+            >
+          </div>
+          <div class="combo-bar-notes">
+            常见的<span class="SuperArt">SA1</span>路线，核心在于<span
+              class="LightAttack"
+              >pf.214[LP]</span
+            >,dl.<span class="SuperArt">236236P</span>。<br />
+            延迟实际上是可选的，但如果不延迟会丢伤害。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke midscreen SA1.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Not-Cornered <span class="HeavyAttack">2HP</span>/Punish
+            <span class="HeavyAttack">5HP</span> >
+            <span class="MediumAttack">pf.214[MP]</span>,<span class="FullInv"
+              >DR</span
+            >
+            (dl.)<span class="HeavyAttack">2HP</span> >
+            <span class="LightAttack">pf.214[LP]</span>,
+            <div class="Overdrive">236KK~P</div>
+            > <span class="SuperArt">214214P</span>
+          </div>
+          <div class="combo-bar-notes">
+            卢克常见的<span class="SuperArt">SA2</span>路线。<br />
+            事实上卢克似乎没有太多很好的接SA2的方式，但无论如何这些路线还是必须学习的：这样能够斩杀时才能够知道如何去斩杀对手。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke SA2.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="HeavyAttack">5HP</span> > {<span class="FullInv"
+              >DRC</span
+            >
+            > <span class="HeavyAttack">4HK</span>,<span class="HeavyAttack"
+              >2HP</span
+            >} *2 > <span class="MediumAttack">pf.214[MP]</span>,<span
+              class="LightAttack"
+              >pf.214[LP]</span
+            >,<span class="HeavyAttack">214HP</span> >
+            <span class="SuperArt">236236K</span>
+          </div>
+          <div class="combo-bar-notes">
+            卢克最常见的全资源斩杀路线。<span class="HeavyAttack">214HP</span> >
+            <span class="SuperArt">236236K</span>也是卢克最常用的接
+            <span class="SuperArt">SA3</span>的路线。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke Basic All-Resources.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Hard">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="HeavyAttack">2HP</span>/<span
+              class="HeavyAttack"
+              >5HP</span
+            >
+            > <span class="LightAttack">pf.214[LP]</span>,9<span
+              class="MediumAttack"
+              >jMP</span
+            >
+            > dl.<span class="SuperArt">j214[P](半蓄力)</span>,
+            <span class="SuperArt">236236P</span>/<span class="SuperArt"
+              >214214P</span
+            >/<span class="SuperArt">236236K</span>
+          </div>
+          <div class="combo-bar-notes">
+            卢克板边最优且泛用的SA路线。<br />
+            前文已经提到过<span class="LightAttack">pf.214[LP]</span>,9<span
+              class="MediumAttack"
+              >jMP</span
+            >
+            > dl.<span class="SuperArt">j214[P](半蓄力)</span
+            >这一路线，详情请查看前文。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke-JMP-dlJ214P-SA1-route.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke-JMP-dlJ214P-SA2-route.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Hard">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner Punish DR <span class="HeavyAttack">4HK</span>,<span
+              class="HeavyAttack"
+              >5HK</span
+            >,<span class="MediumAttack">2MP</span> >
+            <span class="FullInv">DRC</span>
+            <span class="MediumAttack">2MP</span>,<span class="HeavyAttack"
+              >2HP</span
+            >
+            > <span class="FullInv">DRC</span>
+            <span class="HeavyAttack">4HK</span>,<span class="HeavyAttack"
+              >2HP</span
+            >
+            > <span class="LightAttack">pf.214[LP]</span>,9<span
+              class="MediumAttack"
+              >jMP</span
+            >
+            > dl.<span class="SuperArt">j214[P](半蓄力)</span>,<span
+              class="SuperArt"
+              >236236K</span
+            >
+          </div>
+          <div class="combo-bar-notes">
+            卢克板边的最大确反。<br />
+            Punish DR <span class="HeavyAttack">4HK</span>,<span
+              class="HeavyAttack"
+              >5HK</span
+            >,<span class="MediumAttack">2MP</span>
+            的路线是卢克确反的最大起手，板中和板边都可以使用。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/StreetFighterVI/Luke/Luke Corner highest.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
       </div>
     </div>
 
-    <div class="combo-bar" data-difficulty="Very Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="LightAttack">2LP</span>/<span class="LightAttack">2LK</span> > <span class="LightAttack">2LP</span> > <span class="LightAttack">2LP</span> > <span class="LightAttack">214LP</span>,<span class="LightAttack">623LP</span>
-        </div>
-        <div class="combo-bar-notes">
-          基本轻攻击三点确认的板边版本：在新赛季更新之后，板边<span class="LightAttack">214LP</span>可以接上<span class="LightAttack">623LP</span>以提升火力。<br>
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke Corner 2LP3-214LP-623LP.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="LightAttack">5LP</span>~<span class="MediumAttack">MP</span>~<span class="HeavyAttack">HP</span> > <span class="HeavyAttack">214HP</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克<span class="LightAttack">5LP</span>TC的连段。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke [5LPMPHP]-214HP.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="MediumAttack">2MP</span> > <span class="MediumAttack">214MP</span>
-        </div>
-        <div class="combo-bar-notes">
-          中攻击确认。必须要说明的是：<span class="MediumAttack">214MP</span>打防是确反的，因此这不是一个实用的复合。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke 2MP-214MP.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="MediumAttack">2MP</span>,<span class="LightAttack">5LK</span> > <span class="LightAttack">214LP</span>
-        </div>
-        <div class="combo-bar-notes">
-          <span class="MediumAttack">2MP</span>的近距离命中确认，本质上是一个两点确认：<span class="LightAttack">5LK</span>打防安全，因此确认命中再输入<span class="LightAttack">214LP</span>。<br>
-          不过 <span class="MediumAttack">2MP</span> > <span class="LightAttack">5LK</span> 是一个目押，需要稍微练习练习。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke 2MP 5LK 214LP.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="MediumAttack">2MP</span>,<span class="LightAttack">5LK</span> > <span class="LightAttack">214LP</span>,<span class="LightAttack">623LP</span>
-        </div>
-        <div class="combo-bar-notes">
-          上一个连段的板边版本。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke Corner 2MP 5LK 214LP 623LP.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="HeavyAttack">5HP</span> > <span class="HeavyAttack">214HP</span>
-        </div>
-        <div class="combo-bar-notes">
-          基本的<span class="HeavyAttack">5HP</span>命中确认。<br>
-          未蓄力的<span class="HeavyAttack">214HP</span>打防<span style="color:#A31B00;">-4</span>，通常是会被确反的。但如果距离把控得当，这是一个相当安全的招式。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke 5HP-214HP.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="HeavyAttack">2HP</span>/<span class="HeavyAttack">5HP</span> > <span class="LightAttack">214[LP]</span>,<span class="LightAttack">214LP</span>,<span class="LightAttack">623LP</span>
-        </div>
-        <div class="combo-bar-notes">
-          基本的板边连段路线，无需完美蓄力。<br>
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke Corner 5HP 214[LP].webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Not-Cornered ... > <span class="HeavyAttack">2HP</span> > <span class="MediumAttack">214[MP]</span>,<span class="LightAttack">214[LP]</span>,<span class="MediumAttack">214MP</span>
-        </div>
-        <div class="combo-bar-notes">
-          新版本更新之后，<span class="HeavyAttack">2HP</span>可以直接接蓄满的<span class="MediumAttack">214MP</span>。<br>
-          如果你实在不会完美蓄力，就这样接民工三拳。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke DI.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Close to Corner ... > <span class="HeavyAttack">2HP</span> > <span class="MediumAttack">(pf.)214[MP]</span>,<span class="LightAttack">623LP</span>
-        </div>
-        <div class="combo-bar-notes">
-          如果离板边过近，就无法接入<span class="LightAttack">(pf.)214[LP]</span>，使用升龙替代。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke close-to-corner DI.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <h2 class="section-title">核心连段</h2>
-
-    <div class="silver-wolf-box">
-      <div class="silver-wolf-title">
-        <img src="../../../images/SilverWolf.jpg" alt="Silver Wolf" class="silver-wolf-icon">
-        <span>核心连段指北</span>
-      </div>
-      <p>卢克连段的核心在于熟练掌握他的 <b>完美蓄力(pf.214XP)</b> 的时机。</p>
-      <p>刚上手的时候，可以尝试观察蓄力时卢克手臂上的粒子效果，在闪光的那一刻松开按键。</p>
-      <p>随着不断地练习，你最终会形成肌肉记忆。</p>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Not-Cornered <span class="HeavyAttack">2HP</span>/Punish <span class="HeavyAttack">5HP</span> > <span class="MediumAttack">pf.214[MP]</span>,<span class="LightAttack">pf.214[LP]</span>,<span class="HeavyAttack">214HP</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克最核心且常见的<b>完美蓄力</b>路线，通常被称为“民工三连”。<br>
-          如果你不知道该怎么连，只要能命中<span class="HeavyAttack">2HP</span>且<b>不在板边</b>就可以打这一套。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke Basic pf214P route.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="HeavyAttack">2HP</span>/<span class="HeavyAttack">5HP</span> > <span class="LightAttack">pf.214[LP]</span>,<span class="MediumAttack">236MP</span>,<span class="MediumAttack">623MP</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克最核心且常见的板边连段路线。稳定且伤害不低。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke pf214[LP]-236MP-623MP.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Not-Cornered <span class="HeavyAttack">2HP</span>/Punish <span class="HeavyAttack">5HP</span> > <span class="MediumAttack">pf.214[MP]</span>,<span class="FullInv">DR</span> <span class="HeavyAttack">5HP</span> > <span class="LightAttack">pf.214[LP]</span>,<span class="SuperArt">236K~P</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克的常见板中<span class="SuperArt">pf.214[P]</span>路线变体。<br>
-          提供了更好的后续压制和推板，并且伤害依旧可观。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke pf214[MP]-DR5HP-pf214[LP]-236KP.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="HeavyAttack">2HP</span>/Punish <span class="HeavyAttack">5HP</span> > <span class="MediumAttack">pf.214[MP]</span>,<span class="FullInv">DR</span> <span class="HeavyAttack">5HP</span> > <span class="HeavyAttack">pf.214[HP]</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克另一个常见的板中<span class="SuperArt">pf.214[P]</span>路线变体。<br>
-          后续使用<span class="LightAttack">5LP</span>卡帧在板边形成安全跳。<br>
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke Safety-Jump.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Easy - Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          jump-ins,<span class="HeavyAttack">2HP</span> > <span class="SuperArt">Follow ups</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克跳入之后直接接<span class="HeavyAttack">2HP</span>及其后续即可。<br>
-          只要打点足够低，哪怕是<span class="LightAttack">jLP</span>和<span class="LightAttack">jLK</span>也可以直接接<span class="HeavyAttack">2HP</span>。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke Basic Jump-in.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Easy - Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          ... > <span class="FullInv">DRC</span> <span class="MediumAttack">2MP</span>,<span class="HeavyAttack">2HP</span> > <span class="SuperArt">Follow ups</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克最基本、最常见的斗气冲锋取消路线。<br>
-          <span class="FullInv">DRC</span> <span class="MediumAttack">2MP</span>,<span class="HeavyAttack">2HP</span>对于每个卢克玩家来说都是必须掌握的目押。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke Basic DRC.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Punish <span class="LightAttack">2LP</span>,<span class="LightAttack">5LP</span>~<span class="MediumAttack">MP</span>~<span class="HeavyAttack">HP</span> > <span class="HeavyAttack">214HP</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克<span class="LightAttack">2LP</span>确反的基本连段。<br>
-          尽管<span class="LightAttack">2LP</span>确反能够接<span class="HeavyAttack">2HP</span>，但是如果是极限距离，则<span class="HeavyAttack">2HP</span>距离不够。这一套最为稳定。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke PC 2LP [5LPMPHP] 214HP.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Easy - Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Punish <span class="MediumAttack">214MP</span>,<span class="HeavyAttack">2HP</span> > <span class="SuperArt">Follow ups</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克的大确反起手连段结构。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke PC 214MP 2HP.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <h2 class="section-title">进阶连段</h2>
-
-    <div class="combo-bar" data-difficulty="Hard">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Not-Cornered <span class="HeavyAttack">2HP</span>/Punish <span class="HeavyAttack">5HP</span> > <span class="MediumAttack">pf.214[MP]</span>,dl.<span class="Overdrive">214PP~PP</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克的伤害特化连段，通常称为<b>“DDT”</b>。<br>
-          延迟<span class="Overdrive">214PP</span>的输入时机需要多加练习才能稳定。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke DDT.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Hard">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="HeavyAttack">2HP</span>/<span class="HeavyAttack">5HP</span> > <span class="LightAttack">pf.214[LP]</span>,9<span class="MediumAttack">jMP</span> > dl.<span class="SuperArt">j214[P](半蓄力)</span>,<span class="LightAttack">623LP</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克板边的最优路线。<br>
-          在<span class="LightAttack">pf.214[LP]</span>最速前跳<span class="MediumAttack">jMP</span>，之后再延迟半蓄力<span class="SuperArt">j214[P]</span>。<br>
-          这一路线可以接<span class="LightAttack">623LP</span>、<span class="SuperArt">SA1</span>、<span class="SuperArt">SA2</span>、<span class="SuperArt">SA3</span>，功能性强大。<br>
-          但是如果想要接<span class="SuperArt">SA3</span>，由于其发生慢，因此需要<i><b>延迟的时机尽可能晚，半蓄力的时间尽可能长</b></i>，需要大量练习。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke pf214LP-JMP-dlJ214[P].webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <h2 class="section-title">SA路线</h2>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Not-Cornered <span class="HeavyAttack">2HP</span>/Punish <span class="HeavyAttack">5HP</span> > <span class="MediumAttack">pf.214[MP]</span>,<span class="FullInv">DR</span> <span class="HeavyAttack">5HP</span> > <span class="LightAttack">pf.214[LP]</span>,dl.<span class="SuperArt">236236P</span>
-        </div>
-        <div class="combo-bar-notes">
-          常见的<span class="SuperArt">SA1</span>路线，核心在于<span class="LightAttack">pf.214[LP]</span>,dl.<span class="SuperArt">236236P</span>。<br>
-          延迟实际上是可选的，但如果不延迟会丢伤害。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke midscreen SA1.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Not-Cornered <span class="HeavyAttack">2HP</span>/Punish <span class="HeavyAttack">5HP</span> > <span class="MediumAttack">pf.214[MP]</span>,<span class="FullInv">DR</span> (dl.)<span class="HeavyAttack">2HP</span> > <span class="LightAttack">pf.214[LP]</span>,<div class="Overdrive">236KK~P</div> > <span class="SuperArt">214214P</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克常见的<span class="SuperArt">SA2</span>路线。<br>
-          事实上卢克似乎没有太多很好的接SA2的方式，但无论如何这些路线还是必须学习的：这样能够斩杀时才能够知道如何去斩杀对手。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke SA2.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Medium">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          <span class="HeavyAttack">5HP</span> > {<span class="FullInv">DRC</span> > <span class="HeavyAttack">4HK</span>,<span class="HeavyAttack">2HP</span>} *2 > <span class="MediumAttack">pf.214[MP]</span>,<span class="LightAttack">pf.214[LP]</span>,<span class="HeavyAttack">214HP</span> > <span class="SuperArt">236236K</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克最常见的全资源斩杀路线。<span class="HeavyAttack">214HP</span> > <span class="SuperArt">236236K</span>也是卢克最常用的接 <span class="SuperArt">SA3</span>的路线。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke Basic All-Resources.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Hard">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner <span class="HeavyAttack">2HP</span>/<span class="HeavyAttack">5HP</span> > <span class="LightAttack">pf.214[LP]</span>,9<span class="MediumAttack">jMP</span> > dl.<span class="SuperArt">j214[P](半蓄力)</span>, <span class="SuperArt">236236P</span>/<span class="SuperArt">214214P</span>/<span class="SuperArt">236236K</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克板边最优且泛用的SA路线。<br>
-          前文已经提到过<span class="LightAttack">pf.214[LP]</span>,9<span class="MediumAttack">jMP</span> > dl.<span class="SuperArt">j214[P](半蓄力)</span>这一路线，详情请查看前文。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke JMP-dl214[P]-SA1 route.webm" controls muted playsinline preload="metadata"></video>
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke JMP-dl214[P]-SA2 route.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-    <div class="combo-bar" data-difficulty="Very Hard">
-      <div class="combo-bar-left">
-        <div class="combo-bar-notation">
-          Corner Punish DR <span class="HeavyAttack">4HK</span>,<span class="HeavyAttack">5HK</span>,<span class="MediumAttack">2MP</span> > <span class="FullInv">DRC</span> <span class="MediumAttack">2MP</span>,<span class="HeavyAttack">2HP</span> > <span class="FullInv">DRC</span> <span class="HeavyAttack">4HK</span>,<span class="HeavyAttack">2HP</span> > <span class="LightAttack">pf.214[LP]</span>,9<span class="MediumAttack">jMP</span> > dl.<span class="SuperArt">j214[P](半蓄力)</span>,<span class="SuperArt">236236K</span>
-        </div>
-        <div class="combo-bar-notes">
-          卢克板边的最大确反。<br>
-          Punish DR <span class="HeavyAttack">4HK</span>,<span class="HeavyAttack">5HK</span>,<span class="MediumAttack">2MP</span> 的路线是卢克确反的最大起手，板中和板边都可以使用。
-        </div>
-      </div>
-      <div class="combo-bar-right">
-        <video src="../../../videos_local/StreetFighterVI/Luke/Luke Corner highest.webm" controls muted playsinline preload="metadata"></video>
-      </div>
-    </div>
-
-  </div>
-
-  <script src="../../../script.js"></script>
-</body>
+    <script src="../../../script.js"></script>
+  </body>
 </html>
