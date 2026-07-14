@@ -1,0 +1,19 @@
+/* ============================================
+   BlazBlue Central Fiction — Attack Button Colors
+   ============================================ */
+
+.AAttack {
+  color: #ff4500;
+}
+
+.BAttack {
+  color: #00bfff;
+}
+
+.CAttack {
+  color: #228b22;
+}
+
+.DAttack {
+  color: #f1c40f;
+}

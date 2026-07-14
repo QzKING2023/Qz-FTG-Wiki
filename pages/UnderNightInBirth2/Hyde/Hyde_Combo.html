@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNI2/Hyde/Overview</title>
+    <link rel="stylesheet" href="../../../css/common.css" />
+    <link rel="stylesheet" href="../../../css/uni2.css" />
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <header class="title-bar">
+        <img
+          src="../../../images/UnderNightInBirth2/Hyde/Hyde-icon.png"
+          alt="Hyde"
+          class="title-icon"
+        />
+        <h1>Hyde 连段指南</h1>
+        <a href="../UNI2_Main.html" class="back-btn">← UNI2</a>
+      </header>
+
+      <nav class="page-nav-bar">
+        <a class="page-nav-btn">Overview</a>
+        <a class="page-nav-btn active">Combo</a>
+      </nav>
+
+      <h2 class="section-title">在开始之前</h2>
+      <main class="content-area">
+        本节展示在连段指南中，你可能会遇到的各种标识以及其代表的意义。
+        <h3 class="section-subtitle">数字小键盘记法</h3>
+        数字小键盘记法为格斗游戏的操作输入提供了一套标准化体系。它将方向键输入映射到计算器或计算机的数字小键盘上，且始终假设玩家角色面向右侧。
+        <img src="../../../images/Numpad-Notion.png" class="content-img" />
+
+        <h3 class="section-subtitle">其余标识</h3>
+        <table class="legend-table">
+          <tr>
+            <td>标识</td>
+            <td>意义</td>
+          </tr>
+          <tr>
+            <td>></td>
+            <td>
+              <b>取消</b>前一个动作进入下一个动作<br />
+              例如UNI的链式取消(<span class="AAttack">5A</span> >
+              <span class="BAttack">5B</span> > <span class="CAttack">5C</span>)
+            </td>
+          </tr>
+          <tr>
+            <td>~</td>
+            <td>
+              <b>取消</b>前一个动作进入其<b>追加派生</b><br />
+              例如Hyde的<span class="AAttack">214A</span>(<span class="AAttack"
+                >214A</span
+              >~4X~4X)
+            </td>
+          </tr>
+          <tr>
+            <td>,</td>
+            <td>
+              <b>连接</b
+              >前一个动作进入下一个动作。这<b>不是取消</b>，而是帧数能够接上。<br />
+              例如Hyde的<span class="CAttack">j[C]</span>,
+              <span class="BAttack">22B</span>
+            </td>
+          </tr>
+          <tr>
+            <td>jc</td>
+            <td>
+              <b>跳跃取消</b>；对于直跳取消，使用8jc。<br />
+              例如Hyde的<span class="CAttack">2C</span> >
+              <span class="CAttack">5C</span> > jc >
+              <span class="AAttack">jA</span> >
+              <span class="BAttack">jB</span> > <span class="CAttack">jC</span>
+            </td>
+          </tr>
+          <tr>
+            <td>jX</td>
+            <td>
+              <b>跳跃动作</b>；对于直跳动作，使用8jX。<br />
+              例如Hyde的<span class="CAttack">j2C</span>，Linne的<span
+                class="BAttack"
+                >j6B</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>[X]</td>
+            <td>
+              <b>按住按键输入</b>。<br />
+              例如Hyde的<span class="BAttack">6B(1)</span> >
+              <span class="CAttack">5[C]</span>
+            </td>
+          </tr>
+          <tr>
+            <td>]X[</td>
+            <td>
+              <i><b>松开按键输入</b></i
+              >。<br />
+              见于角色Vatista。<br />
+              <span class="DButton">Assult(6D)</span>
+              <span class="CAttack">jC</span>, <span class="CAttack">2C</span> >
+              <span class="CAttack">5C</span> > 9jc >
+              <span class="BAttack">j[B]</span> >
+              <span class="AAttack">j[8]2A</span>,
+              <span class="CAttack">2[C]</span> >
+              <span class="BAttack">2]B[</span>,
+              <span class="AAttack">2A</span> >
+              <span class="BAttack">2B!</span> >
+              <span class="CAttack">2]C[</span>,
+              <span class="CAttack">2[C]</span> >
+              <span class="BAttack">[6]4B</span>,
+              <span class="BAttack">2BBB</span> >
+              <span class="CAttack">2]C[</span> set
+            </td>
+          </tr>
+          <tr>
+            <td>dl.</td>
+            <td>
+              <b>延迟按键输入</b>。<br />
+              例如Hyde的<span class="BAttack">214B</span>~dl.4X~dl.4X
+            </td>
+          </tr>
+          <tr>
+            <td>w.</td>
+            <td>
+              <b>whiff，即空挥</b>
+            </td>
+          </tr>
+          <tr>
+            <td>AA</td>
+            <td>
+              <b>对空</b>，即命中空中的敌人。<br />
+              这可能会造成与地面命中不同的受击状态，可以延展连段。
+            </td>
+          </tr>
+          <tr>
+            <td>CVO</td>
+            <td>
+              Veil Off Cancel<br />
+              在Vorpal状态下，招式命中时<span class="AAttack">A</span>+<span
+                class="BAttack"
+                >B</span
+              >+<span class="CAttack">C</span>
+            </td>
+          </tr>
+          <tr>
+            <td>IW</td>
+            <td>
+              Infinite Worth<br />
+              200气时<span class="DButton">41236D</span>，或在VO中<span
+                class="AAttack"
+                >A</span
+              >+<span class="BAttack">B</span>+<span class="CAttack">C</span>
+            </td>
+          </tr>
+          <tr>
+            <td>IWEXS</td>
+            <td>
+              Infinite Worth EXS<br />
+              HP≤30%，在VO中<span class="AAttack">A</span>+<span class="BAttack"
+                >B</span
+              >+<span class="CAttack">C</span>+<span class="DButton">D</span>
+            </td>
+          </tr>
+        </table>
+      </main>
+
+      <h2 class="section-title">初学者连段</h2>
+      <div class="silver-wolf-box">
+        <div class="silver-wolf-title">
+          <img
+            src="../../../images/SilverWolf.jpg"
+            alt="Silver Wolf"
+            class="silver-wolf-icon"
+          />
+          <span>观前提示</span>
+        </div>
+        <p>即使是初学者连段，这些连段里也会涉及到延迟(dl.)或是空挥(whiff)</p>
+        <p>掌握延迟(dl.)对于UNI系列来说是最基本的素养。</p>
+        <p>当然，这些延迟其实并不难。不要害怕，我相信你很快就能掌握其要领。</p>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Starter > <span class="CAttack">2C</span> >
+            <span class="CAttack">5C</span> > jc > dl.<span class="CAttack"
+              >jC</span
+            >
+            > <span class="CAttack">j2C</span>,
+            <span class="BAttack">jB</span> > <span class="CAttack">jC</span> >
+            <sapn class="CAttack">j6C</sapn>, dash,
+            <span class="CAttack">66C</span> > dl.<span class="BAttack"
+              >236B</span
+            >~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> >
+            <span class="BAttack">214B</span>~4X~4X
+          </div>
+          <div class="combo-bar-notes">
+            Hyde的板中BnB(Bread and Butters, 民工连)，哪怕是<span
+              class="AAttack"
+              >2A</span
+            >这样的高修正起手也有效。<br />
+            dl.<span class="CAttack">jC</span
+            >的主要目的是<b>控高</b>，如果对手离地过高，dash,
+            <span class="CAttack">66C</span>可能落空。dl.<span class="BAttack"
+              >236B</span
+            >的目的也是如此。如果觉得<span class="BAttack">jB</span> >
+            <span class="CAttack">jC</span> >
+            <sapn class="CAttack">j6C</sapn>的路线较难，可以替换成<span
+              class="AAttack"
+              >jA</span
+            >
+            > <span class="BAttack">jB</span> > <span class="CAttack">j6C</span
+            ><br />
+            如果对手已经在板边，在<span class="CAttack">j2C</span
+            >之后这样打：<span class="AAttack">jA</span> >
+            <span class="BAttack">jB</span> > <span class="CAttack">jC</span>,
+            <span class="BAttack">3B</span> > dl.<span class="CAttack">2C</span>
+            > <span class="BAttack">236B</span>~<span class="AAttack">6A</span>
+            ...
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde Basic BNB.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner Starter > <span class="CAttack">2C</span> > (5<span
+              class="BAttack"
+              >B</span
+            >+<span class="CAttack">C</span>) >
+            <span class="AAttack">22A</span>, <span class="BAttack">3B</span> >
+            dl.<span class="CAttack">2C</span> >
+            <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            Hyde的板边BnB。就像上一个连段那样，这个连段几乎可以用于所有起手，除了<span
+              class="BAttack"
+              >6B</span
+            >和<span class="CAttack">3C</span>。<br />
+            <span class="AAttack">22A</span>,
+            <span class="BAttack">3B</span
+            >的衔接起初可能会有些棘手，但对于Hyde的许多Corner连段是必不可少的。<br />
+            <ul>
+              <li>
+                该连段也适用于<span class="DButton">Assult</span>起手，包括<span
+                  class="BAttack"
+                  >j.B</span
+                >、<span class="CAttack">j.[C]</span>以及<span class="CAttack"
+                  >j.6C</span
+                >（面对蹲姿对手时需稍作延迟）。未蓄力的<span class="CAttack"
+                  >j.C</span
+                >会导致连段中断，而<span class="CAttack">j.2C</span
+                >则需要不同的衔接路径。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde corner BnB.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Midscreen <br />
+            close <span class="BAttack">6B(1)</span> >
+            <span class="CAttack">5[C]</span>/far
+            <span class="BAttack">6B</span> >
+            <span class="BAttack">214B</span>~dl.4X~dl.4X,
+            <span class="CAttack">2C</span> > <span class="BAttack">22B</span>,
+            <span class="CAttack">66C</span> >
+            <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            Hyde<span class="BAttack">6B</span>的板中民工连。<br />
+            如果<span class="BAttack">6B</span>在极限距离命中无法接<span
+              class="CAttack"
+              >5[C]</span
+            >，因此直接<span class="BAttack">214B</span>~dl.4X~dl.4X。<br />
+            <span class="BAttack">214B</span
+            >~dl.4X~dl.4X的延迟尽可能晚，这会让后续的连段更简单些。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde 6B close.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde 6B far.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="BAttack">6B(1)</span> >
+            <span class="CAttack">5[C]</span>/<span class="BAttack">6B</span> >
+            (5<span class="BAttack">B</span>+<span class="CAttack">C</span>) >
+            <span class="BAttack">214B</span>~dl.4X~dl.4X,
+            <span class="AAttack">22A</span>, <span class="BAttack">3B</span> >
+            dl.<span class="CAttack">2C</span> >
+            <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            <span class="BAttack">6B</span>的板边民工连。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde corner 6B BnB.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            AA <span class="CAttack">3C</span> CH > w.<span class="AAttack"
+              >2A</span
+            >, dl.<span class="BAttack">2B</span> >
+            <span class="BAttack">214B</span>~dl.4X~dl.4X,
+            <span class="CAttack">2C</span> > <span class="BAttack">22B</span>,
+            <span class="CAttack">66C</span> >
+            <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            <span class="CAttack">3C</span>对空时的康连。<br />
+            <ul>
+              <li>
+                事实上w.<span class="AAttack">2A</span
+                >是可选项，但是空挥这个<span class="AAttack">2A</span
+                >能够让整个连段更简单。
+              </li>
+              <li>
+                可以将<span class="BAttack">214B</span>~dl.4X~dl.4X替换为<span
+                  class="AAttack"
+                  >214A</span
+                >~4X~4X，这样可以不用延迟。但是使用延迟可以让后续更简单。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde 3C AA CH.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="AAttack">A</span>+<span class="DButton">D</span>,
+            dl.<span class="BAttack">6B</span> > jc >
+            <span class="CAttack">j[C]</span>, <span class="BAttack">3B</span> >
+            dl.<span class="CAttack">2C</span> >
+            <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            标准的投连段。<br />
+            等待对手撞墙反弹后再使用<span class="BAttack">6B</span
+            >，这样两段攻击都能命中。如果出招过早，则会完全打空。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde 6T basic.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <span class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="DButton">Assult</span>
+            <span class="CAttack">j2C</span>, <span class="BAttack">5B</span> >
+            <span class="BAttack">214B</span>~dl.4X~dl.4X,
+            <span class="BAttack">3B</span> >
+            <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            <span class="DButton">Assult</span
+            ><span class="CAttack">j2C</span>起手的基本连段。<br />
+            必须记得的是：<span class="DButton">Assult</span
+            >起手是修正相当高的起手，因此连段需要缩短。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde Assultj2C.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </span>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            2<span class="BAttack">B</span>+<span class="CAttack">C</span>,
+            <span class="CAttack">66C</span> >
+            <span class="BAttack">214B</span>~dl.4X~dl.4X,
+            <span class="BAttack">3B</span> > dl.<span class="CAttack">2C</span>
+            > <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            Hyde的2<span class="BAttack">B</span>+<span class="CAttack">C</span
+            >可以充当牵制飞行道具，如果命中则可以接连段。<br />
+            <ul>
+              <li>
+                <span class="CAttack">66C</span
+                >能否接上取决于距离。只要稍微远一点就可能挥空。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde 2FF.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <span class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="CAttack">5[C]</span>/<span class="CAttack"
+              >5C</span
+            >
+            CH > 5<span class="BAttack">B</span>+<span class="CAttack">C</span>
+            > <span class="BAttack">236B</span>~<span class="BAttack">6B</span>,
+            <span class="BAttack">5B</span> > <span class="BAttack">22B</span>,
+            <span class="CAttack">jC</span> > <span class="BAttack">jB</span> >
+            <span class="AAttack">jA</span>, <span class="BAttack">3B</span> >
+            dl.<span class="CAttack">2C</span> >
+            <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            <span class="CAttack">5C</span
+            >起手的连段，用来惩罚那些你无法用5<span class="BAttack">B</span
+            >+<span class="CAttack">C</span>或<span class="BAttack">22B</span
+            >应对的凹技。<br />
+            <ul>
+              <li>
+                <span class="CAttack">5[C]</span
+                >是Hyde在版边最强的起手之一，因此你可以用它代替5<span
+                  class="BAttack"
+                  >B</span
+                >+<span class="CAttack">C</span
+                >来惩罚特定凹技，从而打出更高伤害。<br />
+              </li>
+              <li>
+                若以<span class="CAttack">5[C]</span>起手，将<span
+                  class="BAttack"
+                  >5B</span
+                >换成<span class="BAttack">2B</span>可进一步提升伤害。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <span class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde corner CH 5C.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </span>
+      </span>
+      <span class="combo-bar" data-difficulty="Easy">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner 5<span class="BAttack">B</span>+<span class="CAttack"
+              >C</span
+            >
+            > <span class="BAttack">236B</span>~<span class="BAttack">6B</span>,
+            <span class="CAttack">5C</span> > <span class="BAttack">22B</span>,
+            <span class="CAttack">jC</span> > <span class="BAttack">jB</span> >
+            <span class="AAttack">jA</span>, <span class="BAttack">3B</span> >
+            dl.<span class="CAttack">2C</span> >
+            <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            5<span class="BAttack">B</span>+<span class="CAttack">C</span
+            >板边的大伤害连段。
+            <ul>
+              <li>
+                5<span class="BAttack">B</span>+<span class="CAttack">C</span
+                >若在较远距离命中，会因距离修正而导致伤害降低。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde corner BC CH.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </span>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="BAttack">22B</span> CH,
+            <span class="CAttack">5C</span> > 5<span class="BAttack">B</span
+            >+<span class="CAttack">C</span> >
+            <span class="BAttack">214B</span>~dl.4X~dl.4X,
+            <span class="AAttack">22A</span>, <span class="BAttack">3B</span> >
+            dl.<span class="CAttack">2C</span> >
+            <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            <span class="BAttack">22B</span>版边连段。主要用于惩罚凹技。<br />
+            <ul>
+              <li>
+                此连段中的<span class="AAttack">22A</span
+                >只有在打康时才能使用。若<span class="BAttack">22B</span
+                >命中且非康，则需在<span class="BAttack">214B</span>后跳过<span
+                  class="AAttack"
+                  >22A</span
+                >，直接接<span class="BAttack">3B</span>。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde corner 22B CH.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <h2 class="section-title">进阶连段</h2>
+      <div class="silver-wolf-box">
+        <div class="silver-wolf-title">
+          <img
+            src="../../../images/SilverWolf.jpg"
+            alt="Silver Wolf"
+            class="silver-wolf-icon"
+          />
+          <span>观前提示</span>
+        </div>
+        <p>在进阶连段中，会涉及到一些窗口相当紧凑的连段。</p>
+        <p>努力练习吧，这是成为高手的必经之路。</p>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Hard">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="AAttack">2A</span> > <span class="CAttack">2C</span> >
+            dl.<span class="CAttack">5C</span> > 9jc >
+            <span class="CAttack">j2C</span> >
+            <span class="CAttack">j[C]</span>, <span class="BAttack">22B</span>,
+            dash, <span class="CAttack">66C</span> >
+            <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> >
+            <span class="BAttack">214B</span>~4X~4X
+          </div>
+          <div class="combo-bar-notes">
+            Rising
+            <span class="CAttack">j.2C</span
+            >连段是Hyde难度较高的连段之一。<br />
+            你需要<b>在跳跃取消后立即输入<span class="CAttack">j.2C</span></b
+            >，然后精准把握<span class="CAttack">j.[C]</span
+            >的时机才能接上。想要<span class="CAttack">j.2C</span
+            >的两段攻击都命中，这个输入窗口非常窄。时机只要稍有偏差，连段就会断掉。
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde 2A optimal.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Medium">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="AAttack">A</span>+<span class="DButton">D</span>,
+            <span class="CAttack">5C</span> >
+            <span class="BAttack">6B(2)</span> > jc >
+            <span class="CAttack">j[C]</span>, <span class="AAttack">22A</span>,
+            <span class="BAttack">5B</span> > <span class="CAttack">3C</span> >
+            <span class="BAttack">214B</span>~4X~4X
+          </div>
+          <div class="combo-bar-notes">
+            近乎最优的投连段。<br />
+            <ul>
+              <li>
+                投技后需尽快接<span class="CAttack">5C</span
+                >。稍有延迟，都会让<span class="BAttack">6B</span
+                >仅命中第二击的难度增加。
+              </li>
+              <li>
+                <span class="CAttack">3C</span
+                >之后偶尔会断连。以最快速度输入<span class="BAttack">214B</span
+                >~4X~4X有助于防止这种情况。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde 6T near optimal.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Hard">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            <span class="AAttack">A</span>+<span class="DButton">D</span>,
+            <span class="CAttack">5C</span> >
+            <span class="BAttack">6B(2)</span> > jc >
+            <span class="CAttack">j[C]</span> >
+            <span class="CAttack">j2C</span>, <span class="CAttack">66C</span> >
+            <span class="BAttack">22B</span>,
+            <span class="CAttack">3C</span>/<span class="BAttack">66B</span> >
+            <span class="BAttack">214B</span>~4X~4X
+          </div>
+          <div class="combo-bar-notes">
+            最优投技连段。
+            <ul>
+              <li>
+                收尾时可选择<span class="CAttack">3C</span>或<span
+                  class="BAttack"
+                  >66B</span
+                >，取决于你是想追求最高伤害（<span class="CAttack">3C</span
+                >）还是更好的击倒效果（<span class="BAttack">66B</span
+                >）。两者伤害差距很小（仅差9点），因此通常使用<span
+                  class="BAttack"
+                  >66B</span
+                >更优，但若想尽可能榨取伤害，也可选用<span class="CAttack"
+                  >3C</span
+                >。
+              </li>
+              <li>
+                <span class="CAttack">66C</span
+                >的使用可能有点棘手，因为很容易误出<span class="CAttack"
+                  >5C</span
+                >。不过，如果你能打出上面那套连段，这套也不会难太多。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde 6T optimal.webm"
+            controls
+            muted
+            playslinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <div class="combo-bar" data-difficulty="Very Hard">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="BAttack">6B</span> > dl.5<span class="BAttack"
+              >B</span
+            >+<span class="CAttack">C</span> > w.<span class="BAttack"
+              >236B</span
+            >~<span class="BAttack">6B</span>, <span class="CAttack">5C</span> >
+            <span class="BAttack">22B</span>, <span class="CAttack">jC</span> >
+            <span class="BAttack">jB</span> > <span class="AAttack">jA</span>,
+            <span class="BAttack">3B</span> > dl.<span class="CAttack">2C</span>
+            > <span class="BAttack">236B</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">66C</span> > Ender
+          </div>
+          <div class="combo-bar-notes">
+            最优<span class="BAttack">6B</span
+            >版边连段。掌握好延迟时机，让236X挥空的同时仍能使打击派生攻击命中，一开始可能有些棘手。不过一旦掌握了这点，连段其余部分就不算太难。
+            <ul>
+              <li>
+                在贴脸距离下，这套连段会稍难一些，因为更容易在空中发生换边。离版边稍有距离就能避免这种情况。
+              </li>
+              <li>
+                该路线也可由<span class="CAttack">5[C]</span> > w.<span
+                  class="AAttack"
+                  >2A</span
+                >起手打出。
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde corner 6B optimal.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </div>
+
+      <span class="combo-bar" data-difficulty="Hard">
+        <div class="combo-bar-left">
+          <div class="combo-bar-notation">
+            Corner <span class="BAttack">6B</span> > dl.5<span class="BAttack"
+              >B</span
+            >+<span class="CAttack">C</span> > w.<span class="BAttack"
+              >236B</span
+            >~<span class="BAttack">6B</span>, <span class="CAttack">5C</span> >
+            jc > <span class="CAttack">jC</span> >
+            <span class="CAttack">j2C</span>, <span class="CAttack">66C</span> >
+            <span class="AAttack">236A</span>~<span class="AAttack">6A</span>,
+            <span class="CAttack">5C</span> >
+            <span class="BAttack">214B</span>~4X~4X
+          </div>
+          <div class="combo-bar-notes">
+            若w.236X~<span class="BAttack">6B</span
+            >导致换边，而非将对手留在版边，则使用此连段。由于5<span
+              class="BAttack"
+              >B</span
+            >+<span class="CAttack">C</span
+            >的延迟时机要求非常精确，这种情况很常见。将此连段与正确连段一并掌握，一旦发生换边便能及时补救。
+            <ul>
+              <li>
+                该路线也可由<span class="CAttack">5[C]</span> > w.<span
+                  class="AAttack"
+                  >2A</span
+                >起手打出。
+              </li>
+              <li>
+                如果想要榨取更高的伤害，在<span class="AAttack">236A</span
+                >~<span class="AAttack">6A</span>之后接66<span class="BAttack"
+                  >3B</span
+                >
+                > dl.<span class="CAttack">2C</span> >
+                <span class="CAttack">3C</span> >
+                <span class="BAttack">214B</span>~4X~4X
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="combo-bar-right">
+          <video
+            src="../../../videos_local/UnderNightInBirth2/Hyde/Hyde corner 6B dlBC sideswap.webm"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+          ></video>
+        </div>
+      </span>
+    </div>
+
+    <script src="../../../script.js"></script>
+  </body>
+</html>

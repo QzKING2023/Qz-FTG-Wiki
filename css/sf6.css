@@ -1,0 +1,23 @@
+/* ============================================
+   Street Fighter VI — Attack Type Colors
+   ============================================ */
+
+.LightAttack {
+  color: #00FFFF;
+}
+
+.MediumAttack {
+  color: #FFFF00;
+}
+
+.HeavyAttack {
+  color: #FF0000;
+}
+
+.Overdrive {
+  color: #CC00FF;
+}
+
+.SuperArt {
+  color: #FFFFFF;
+}

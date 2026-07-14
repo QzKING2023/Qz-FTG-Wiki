@@ -1,0 +1,69 @@
+.AAttack {
+  color: #e01984;
+}
+
+.BAttack {
+  color: #ff7502;
+}
+
+.CAttack {
+  color: #36b370;
+}
+
+.DButton {
+  color: #1f8ecf;
+}
+
+/* ============================================
+   Playstyle Box
+   Wraps a centered summary + pros-cons columns
+   ============================================ */
+
+.playstyle-box {
+  max-width: 900px;
+  width: 100%;
+  margin: 1rem 0;
+  background-color: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.playstyle-summary {
+  text-align: center;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
+
+/* Pros-cons inside playstyle: flush, no outer gap */
+.playstyle-box .pros-cons {
+  margin: 0;
+  max-width: none;
+  gap: 0;
+}
+
+.playstyle-box .pros-column {
+  border: none;
+  border-radius: 0;
+}
+
+.playstyle-box .cons-column {
+  border: none;
+  border-radius: 0;
+  border-left: 1px solid #333;
+}
+
+/* Stack on narrow screens */
+@media (max-width: 480px) {
+  .playstyle-box .pros-cons {
+    flex-direction: column;
+  }
+
+  .playstyle-box .cons-column {
+    border-left: none;
+    border-top: 1px solid #333;
+  }
+}

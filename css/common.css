@@ -84,7 +84,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.5rem;
   color: #555;
@@ -92,7 +92,7 @@
 }
 
 .combo-bar-right::before {
-  content: '📷 视频 / 动图';
+  content: "📷 视频 / 动图";
   white-space: nowrap;
 }
 
@@ -163,10 +163,7 @@ body {
   background-color: #121212;
   color: #f0f0f0;
   /* Consolas for English, FangSong (仿宋) for Chinese */
-  font-family:
-    'Consolas',
-    'FangSong', '仿宋',
-    monospace;
+  font-family: "Consolas", "FangSong", "仿宋", monospace;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -181,22 +178,22 @@ body {
    ============================================ */
 
 .silver-wolf-box {
-  background-color: #1e1a2d;            /* dark purple tint */
-  border: 2px solid #4f48b9;            /* purple border */
-  border-left: 6px solid #4f48b9;       /* thicker left accent */
+  background-color: #1e1a2d; /* dark purple tint */
+  border: 2px solid #4f48b9; /* purple border */
+  border-left: 6px solid #4f48b9; /* thicker left accent */
   border-radius: 6px;
   padding: 1rem 1.25rem;
   margin: 1rem 0;
   max-width: 700px;
   width: 100%;
-  color: #eef;                          /* cool white */
+  color: #eef; /* cool white */
 }
 
 .silver-wolf-box .silver-wolf-title {
   font-weight: bold;
   font-size: 1.1rem;
   margin: 0 0 0.4rem 0;
-  color: #4f48b9;                       /* purple title text */
+  color: #4f48b9; /* purple title text */
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -267,7 +264,9 @@ body {
   border: 2px solid #333;
   border-radius: 8px;
   overflow: hidden;
-  transition: border-color 0.2s, transform 0.2s;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
 }
 
 .game-logo-btn:hover {
@@ -320,7 +319,10 @@ body {
   border-bottom: 2px solid #333;
   background-color: #1a1a1a;
   font-size: 0.95rem;
-  transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+  transition:
+    color 0.15s,
+    background-color 0.15s,
+    border-color 0.15s;
 }
 
 .page-nav-btn:first-child {
@@ -357,7 +359,9 @@ body {
   border: 1px solid #4f48b9;
   border-radius: 6px;
   margin-bottom: 1rem;
-  transition: color 0.15s, background-color 0.15s;
+  transition:
+    color 0.15s,
+    background-color 0.15s;
 }
 
 .back-btn:hover {
@@ -391,7 +395,9 @@ body {
   border: 2px solid #333;
   border-radius: 8px;
   overflow: hidden;
-  transition: border-color 0.2s, transform 0.2s;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
 }
 
 .char-btn:hover {
@@ -514,12 +520,12 @@ body {
    ============================================ */
 
 .rating-box {
-  background-color: #2d261a;            /* dark gold tint */
-  border: 2px solid #d4a017;            /* gold border */
-  border-left: 6px solid #d4a017;       /* thicker left accent */
+  background-color: #2d261a; /* dark gold tint */
+  border: 2px solid #d4a017; /* gold border */
+  border-left: 6px solid #d4a017; /* thicker left accent */
   border-radius: 6px;
   padding: 1rem 1.25rem;
-  color: #ffe;                          /* warm white */
+  color: #ffe; /* warm white */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -529,7 +535,7 @@ body {
   font-weight: bold;
   font-size: 1.1rem;
   margin: 0 0 0.1rem 0;
-  color: #d4a017;                       /* gold title text */
+  color: #d4a017; /* gold title text */
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -748,63 +754,12 @@ body {
 }
 
 /* ============================================
-   Attack Type & Invulnerability Colors
+   Full Invulnerability Color
+   Used by both SF6 and BBCF pages
    ============================================ */
 
-.LightAttack {
-  color: #00FFFF;
-}
-
-.MediumAttack {
-  color: #FFFF00;
-}
-
-.HeavyAttack {
-  color: #FF0000;
-}
-
-.Overdrive {
-  color: #CC00FF;
-}
-
-.SuperArt {
-  color: #FFFFFF;
-}
-
 .FullInv {
-  color: #00FF00;
-}
-
-.Hit-ProjectileInv {
-  color: #D03C01;
-}
-
-.Hit-ThrowInv {
-  color: #9B59B6;
-}
-
-.ThrowInv {
-  color: #3498DB;
-}
-
-.ProjectileInv {
-  color: #E1712B;
-}
-
-.AAttack {
-  color: #FF4500;
-}
-
-.BAttack {
-  color: #00BFFF;
-}
-
-.CAttack {
-  color: #228B22;
-}
-
-.DAttack {
-  color: #f1c40f;
+  color: #00ff00;
 }
 
 /* ============================================
@@ -817,12 +772,12 @@ body {
   max-width: 700px;
   border-collapse: collapse;
   margin: 0;
-  border: 1px solid #555;                /* 表格外边框 */
+  border: 1px solid #555; /* 表格外边框 */
 }
 
 .legend-table td {
   padding: 0.4rem 0.75rem;
-  border: 1px solid #444;                /* 所有单元格网格线 */
+  border: 1px solid #444; /* 所有单元格网格线 */
   font-size: 0.85rem;
   color: #ccc;
 }
@@ -830,23 +785,23 @@ body {
 .legend-table tr:first-child td {
   font-weight: bold;
   color: #e0e0e0;
-  background-color: #1e1e1e;             /* 表头行区分背景 */
-  border-bottom: 2px solid #666;         /* 表头行下方更粗的分割线 */
+  background-color: #1e1e1e; /* 表头行区分背景 */
+  border-bottom: 2px solid #666; /* 表头行下方更粗的分割线 */
 }
 
 .legend-table td:first-child {
   font-weight: bold;
   white-space: nowrap;
   width: 120px;
-  color: #ffffff;                        /* 金色标识列，和 combo-bar-notation 统一 */
+  color: #ffffff; /* 金色标识列，和 combo-bar-notation 统一 */
 }
 
 .legend-table tr:first-child td:first-child {
-  color: #e0e0e0;                        /* 表头行第一列不用金色 */
+  color: #e0e0e0; /* 表头行第一列不用金色 */
 }
 
 .legend-table tr:last-child td {
-  border-bottom-width: 1px;              /* 最后一行保持与其余行一致的底部边框 */
+  border-bottom-width: 1px; /* 最后一行保持与其余行一致的底部边框 */
 }
 
 /* ============================================
@@ -857,10 +812,10 @@ body {
 
 .players-watch-box {
   background-color: #1a1a1a;
-  border: 1px solid #4a4a4a;            /* visible outer gridline */
-  border-left: 4px solid #1abc9c;       /* teal left accent */
-  border-radius: 0;                     /* sharp corners for spreadsheet look */
-  padding: 0;                           /* cells own their padding */
+  border: 1px solid #4a4a4a; /* visible outer gridline */
+  border-left: 4px solid #1abc9c; /* teal left accent */
+  border-radius: 0; /* sharp corners for spreadsheet look */
+  padding: 0; /* cells own their padding */
   margin: 1rem auto;
   max-width: 900px;
   width: 100%;
@@ -873,18 +828,18 @@ body {
   font-size: 1.1rem;
   margin: 0;
   padding: 0.6rem 0.75rem;
-  color: #e0e0e0;                       /* slightly brighter for header */
+  color: #e0e0e0; /* slightly brighter for header */
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-bottom: 2px solid #555;        /* thicker header separator */
-  background-color: #1e1e1e;            /* distinguish header row */
+  border-bottom: 2px solid #555; /* thicker header separator */
+  background-color: #1e1e1e; /* distinguish header row */
 }
 
 /* Gamepad icon via Unicode */
 .players-watch-box .players-watch-title::before {
-  content: '\1F3AE';                    /* 🎮 video game */
+  content: "\1F3AE"; /* 🎮 video game */
   font-size: 1.3rem;
   color: #1abc9c;
 }
@@ -892,9 +847,9 @@ body {
 .players-watch-row {
   display: grid;
   grid-template-columns: 180px minmax(160px, auto) 1fr;
-  gap: 0;                               /* borders provide separation */
-  align-items: stretch;                   /* full-height cells for continuous vertical gridlines */
-  border-bottom: 1px solid #4a4a4a;     /* row separator gridline */
+  gap: 0; /* borders provide separation */
+  align-items: stretch; /* full-height cells for continuous vertical gridlines */
+  border-bottom: 1px solid #4a4a4a; /* row separator gridline */
 }
 
 .players-watch-row:last-child {
@@ -907,23 +862,23 @@ body {
   font-size: 0.95rem;
   white-space: nowrap;
   padding: 0.5rem 0.75rem;
-  border-right: 1px solid #4a4a4a;      /* vertical gridline */
+  border-right: 1px solid #4a4a4a; /* vertical gridline */
   display: flex;
-  align-items: center;                   /* center content in full-height cell */
+  align-items: center; /* center content in full-height cell */
 }
 
 .players-watch-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;               /* center content in full-height cell */
+  justify-content: center; /* center content in full-height cell */
   gap: 0.35rem;
   padding: 0.5rem 0.75rem;
-  border-right: 1px solid #4a4a4a;      /* vertical gridline */
+  border-right: 1px solid #4a4a4a; /* vertical gridline */
 }
 
 .players-watch-cfn {
-  color: #5dade2;                       /* muted cyan, consistent with reversal color */
+  color: #5dade2; /* muted cyan, consistent with reversal color */
   font-size: 0.85rem;
   white-space: nowrap;
   font-weight: bold;
@@ -953,7 +908,7 @@ body {
   white-space: normal;
   word-break: break-word;
   display: flex;
-  align-items: center;                   /* center content in full-height cell */
+  align-items: center; /* center content in full-height cell */
   justify-content: center;
 }
 
@@ -969,7 +924,7 @@ body {
   }
 
   .players-watch-row::after {
-    content: '';
+    content: "";
     display: block;
     width: 100%;
     height: 1px;
@@ -1001,5 +956,4 @@ body {
   .players-watch-box {
     padding: 0.75rem;
   }
-
 }
